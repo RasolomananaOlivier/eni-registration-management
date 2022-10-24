@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "login.h"
 
 QString style_active = "\
     background-color : rgb(35, 50, 60);\
@@ -17,8 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentWidget(0);
-    ui->pushButton->setStyleSheet(style_active);
+//    ui->view->setCurrentIndex(0);
+//    ui->stackedWidget->setCurrentWidget(0);
+//    ui->pushButton->setStyleSheet(style_active);
 }
 
 MainWindow::~MainWindow()
@@ -96,5 +98,11 @@ void MainWindow::on_pushButton_6_clicked()
     ui->pushButton_3->setStyleSheet(style_inactive);
     ui->pushButton_4->setStyleSheet(style_inactive);
     ui->pushButton_5->setStyleSheet(style_inactive);
+}
+
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    ui->view->setCurrentIndex(1);
 }
 
