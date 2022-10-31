@@ -2,10 +2,13 @@
 #define LOGIN_H
 
 #include <QMainWindow>
+#include <QSqlDatabase>
 
 namespace Ui {
 class Login;
 }
+
+class QSqlTableModel;
 
 class Login : public QMainWindow
 {
@@ -16,10 +19,14 @@ public:
     ~Login();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_login_clicked();
 
 private:
     Ui::Login *ui;
+
+    QSqlTableModel *userModel;
+    QSqlDatabase mDatabase;
+
 };
 
 #endif // LOGIN_H
