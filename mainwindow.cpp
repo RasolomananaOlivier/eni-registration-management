@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <newstudent.h>
 
+// Change the path to the correct path
 #define ACCESS "DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=C:\\Users\\RASOLOMANANA Olivier\\Documents\\Eni-Registration.mdb"
 
 QString style_active = "\

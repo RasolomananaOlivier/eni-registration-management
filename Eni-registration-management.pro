@@ -33,3 +33,5 @@ RESOURCES += \
     images.qrc
 
 QMAKE_CXXFLAGS += -std=gnu++11
+
+DISTFILES +=
