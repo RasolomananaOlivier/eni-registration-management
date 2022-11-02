@@ -43,7 +43,16 @@ MainWindow::MainWindow(QWidget *parent,QString username)
     }
 
     // Invited model
-    l1ProModel = new QSqlTableModel(this);
+    l1ProModel = new QSqlTableModel(this),
+            l1IgModel = new QSqlTableModel(this),
+            l2GbModel = new QSqlTableModel(this),
+            l2SrModel = new QSqlTableModel(this),
+            l3GbModel = new QSqlTableModel(this),
+            l3SrModel = new QSqlTableModel(this),
+            m1GbModel = new QSqlTableModel(this),
+            m1SrModel = new QSqlTableModel(this),
+            m2GbModel = new QSqlTableModel(this),
+            m2SrModel = new QSqlTableModel(this);
 
 
     // Admited model
@@ -159,9 +168,9 @@ void MainWindow::on_l1ProInvitedTable_clicked(const QModelIndex &index)
 
 
 
-void MainWindow::on_inscriptionYear_currentTextChanged(const QString &arg1)
+void MainWindow::on_inscriptionYear_currentTextChanged(const QString &selectedYear)
 {
-    qDebug() << arg1;
+    initInvitedStudentTable(selectedYear);
 }
 
 
@@ -176,6 +185,59 @@ void MainWindow::on_add_staggering_clicked()
 
 void MainWindow::on_l1ProInvitedTable_doubleClicked(const QModelIndex &index)
 {
-    qDebug() << index;
+    openStudentInfo(index);
+}
+
+void MainWindow::on_l1IgUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_l2GbUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_l2SrUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_l3GbUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_l3SrUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_m1GbUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_m1SrUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_m2GbUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_m2SrUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
 }
 

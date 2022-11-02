@@ -16,11 +16,6 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-//    Login::hide();
-
-//    MainWindow *dashboard ;
-//    dashboard = new MainWindow();
-//    dashboard->show();
 }
 
 Login::~Login()
@@ -58,6 +53,8 @@ void Login::on_login_clicked()
 
             MainWindow *dashboard ;
             dashboard = new MainWindow(nullptr, userName);
+            // Make the window fullscreen
+            dashboard->setWindowState(Qt::WindowMaximized);
             dashboard->show();
         }else{
             QMessageBox::critical(this, "Connection echouee", "Votre nom d'utilisateur ou mot de passe est incorrect");

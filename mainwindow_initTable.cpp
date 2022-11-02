@@ -5,96 +5,35 @@
 #include <QSqlError>
 
 void MainWindow::initInvitedStudentTable(QString year){
-    QString yearFilter = " AND inscriptionYear = ";
-
     // L1 Pro invited
+    setupTableModelRelation(l1ProModel, ui->l1ProInvitedTable, "Student", "L1","Pro",year,"invited");
 
-    l1ProModel->setTable("Student");
+    // L1 Ig invited
+    setupTableModelRelation(l1IgModel, ui->l1IgInvitedTable, "Student", "L1","Ig",year,"invited");
 
-    QString queryl1Pro =" studyLevel = 'L1' AND category = 'Pro' AND situation = 'invited' ";
-    l1ProModel->setFilter(queryl1Pro + yearFilter + year);
-    l1ProModel->select();
-    ui->l1ProInvitedTable->setModel(l1ProModel);
-    hideColumn(ui->l1ProInvitedTable);
+    // L2 Gb invited
+    setupTableModelRelation(l2GbModel, ui->l2GbInvitedTable, "Student", "L2","Gb",year,"invited");
 
-//    // L1 Ig invited
-//    l1IgModel = new QSqlTableModel(this);
-//    l1IgModel->setTable("Student");
-//    QString queryL1Ig =" level = 'L1' AND category = 'Ig' AND situation = 'invited' ";
-//    l1ProModel->setFilter(queryL1Ig + yearFilter + year );
-//    l1IgModel->select();
+    // L2 Sr invited
+    setupTableModelRelation(l2SrModel, ui->l2SrInvitedTable, "Student", "L2","Sr",year,"invited");
 
-//    ui->l1IgInvitedTable->setModel(l1IgModel);
+    // L3 Gb invited
+     setupTableModelRelation(l3GbModel, ui->l3GbInvitedTable, "Student", "L3","Gb",year,"invited");
 
-//    // L2 Gb invited
-//    l2GbModel = new QSqlTableModel(this);
-//    l2GbModel->setTable("Student");
-//    QString queryL2Gb =" level = 'L2' AND category = 'Gb' AND situation = 'invited' ";
-//    l1ProModel->setFilter(queryL2Gb + yearFilter + year );
-//    l2GbModel->select();
+    // L3 SR invited
+     setupTableModelRelation(l3SrModel, ui->l3SrInvitedTable, "Student", "L3","Sr",year,"invited");
 
-//    ui->l2GbInvitedTable->setModel(l2GbModel);
+    // M1 Gb invited
+      setupTableModelRelation(m1GbModel, ui->m1GbInvitedTable, "Student", "M1","Gb",year,"invited");
 
-//    // L2 Sr invited
-//    l2SrModel = new QSqlTableModel(this);
-//    l2SrModel->setTable("Student");
-//    QString queryL2Sr =" level = 'L2' AND category = 'Sr' AND situation = 'invited' ";
-//    l1ProModel->setFilter(queryL2Sr + yearFilter + year );
-//    l2SrModel->select();
+    // M1 Sr invited
+      setupTableModelRelation(m1SrModel, ui->m1SrInvitedTable, "Student", "M1","Sr",year,"invited");
 
-//    ui->l2SrInvitedTable->setModel(l2SrModel);
+    // M2 Gb invited
+      setupTableModelRelation(m2GbModel, ui->m2GbInvitedTable, "Student", "M2","Gb",year,"invited");
 
-//    // L3 Gb invited
-//    l3GbModel = new QSqlTableModel(this);
-//    l3GbModel->setTable("Student");
-//    QString queryL3Gb =" level = 'L3' AND category = 'Gb' AND situation = 'invited' ";
-//    l1ProModel->setFilter(queryL3Gb + yearFilter + year );
-//    l3GbModel->select();
-
-//    ui->l3GbInvitedTable->setModel(l3GbModel);
-
-//    // L3 SR invited
-//    l3SrModel = new QSqlTableModel(this);
-//    l3SrModel->setTable("Student");
-//    QString queryL3Sr =" level = 'L3' AND category = 'Sr' AND situation = 'invited' ";
-//    l1ProModel->setFilter(queryL3Sr + yearFilter + year );
-//    l3SrModel->select();
-
-//    ui->l3SrInvitedTable->setModel(l3SrModel);
-
-//    // TODOL
-//    // M1 Gb invited
-//    m1GbModel = new QSqlTableModel(this);
-//    m1GbModel->setTable("Student");
-//    m1GbModel->setFilter(" level = 'M1' AND category = 'Gb' AND situation = 'invited' ");
-//    m1GbModel->select();
-
-//    ui->m1GbInvitedTable->setModel(m1GbModel);
-
-//    // M1 Sr invited
-//    m1SrModel = new QSqlTableModel(this);
-//    m1SrModel->setTable("Student");
-//    m1SrModel->setFilter(" level = 'M1' AND category = 'Sr' AND situation = 'invited' ");
-//    m1SrModel->select();
-
-//    ui->m1SrInvitedTable->setModel(m1SrModel);
-
-
-//    // M2 Gb invited
-//    m2GbModel = new QSqlTableModel(this);
-//    m2GbModel->setTable("Student");
-//    m2GbModel->setFilter(" level = 'M2' AND category = 'Gb' AND situation = 'invited' ");
-//    m2GbModel->select();
-
-//    ui->m2GbInvitedTable->setModel(m2GbModel);
-
-//    // M2 Sr invited
-//    m2SrModel = new QSqlTableModel(this);
-//    m2SrModel->setTable("Student");
-//    m2SrModel->setFilter(" level = 'M2' AND category = 'Gb' AND situation = 'invited' ");
-//    m2SrModel->select();
-
-//    ui->m2SrInvitedTable->setModel(m2SrModel);
+    // M2 Sr invited
+      setupTableModelRelation(m2SrModel, ui->m2SrInvitedTable, "Student", "M2","Sr",year,"invited");
 }
 
 

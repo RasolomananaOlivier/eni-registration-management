@@ -16,20 +16,23 @@ SOURCES += \
     mainwindow_initTable.cpp \
     mainwindow_methods.cpp \
     newstaggering.cpp \
-    newstudent.cpp
+    newstudent.cpp \
+    studentinfo.cpp
 
 HEADERS += \
     dbmanager.h \
     login.h \
     mainwindow.h \
     newstaggering.h \
-    newstudent.h
+    newstudent.h \
+    studentinfo.h
 
 FORMS += \
     login.ui \
     mainwindow.ui \
     newstaggering.ui \
-    newstudent.ui
+    newstudent.ui \
+    studentinfo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

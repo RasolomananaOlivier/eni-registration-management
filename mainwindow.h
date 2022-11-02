@@ -44,6 +44,24 @@ private slots:
 
     void on_l1ProInvitedTable_doubleClicked(const QModelIndex &index);
 
+    void on_l1IgUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_l2GbUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_l2SrUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_l3GbUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_l3SrUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_m1GbUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_m1SrUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_m2GbUnpaidTable_doubleClicked(const QModelIndex &index);
+
+    void on_m2SrUnpaidTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 
@@ -76,5 +94,27 @@ private:
     void initUnpaidStudentTable(QString year="2022");
     void initStaggeringTable(QString year="2022");
     void hideColumn(QTableView *tableView);
+    void setupTableModelRelation(QSqlTableModel *model, QTableView *tableView,QString dbTableName,QString studyLevel,QString category, QString year,QString situation );
+
+    void openStudentInfo(const QModelIndex &index);
 };
 #endif // MAINWINDOW_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

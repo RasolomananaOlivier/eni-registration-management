@@ -34,12 +34,13 @@ void NewStudent::on_buttonBox_accepted()
     QString bac = ui->bac->currentText();
     QString category = ui->category->currentText();
     QString inscriptionYear = ui->inscriptionYear->text();
+    QString email = ui->email->text();
 
 
     QSqlQuery query;
 
-    query.prepare("INSERT INTO Student (firstName,  lastName,  cin,  phoneNumber,  cinDeliveranceDate,    birthplace,  birthday,  fatherName,  motherName,  situation , category,  bac,  inscriptionYear,   studyLevel)"
-                              "VALUES  (:firstName, :lastName, :cin, :phoneNumber,  :cinDeliveranceDate,  :birthplace, :birthday, :fatherName, :motherName, :situation, :category, :bac, :inscriptionYear, :lvl)");
+    query.prepare("INSERT INTO Student (firstName,  lastName,  cin,  phoneNumber,  cinDeliveranceDate,    birthplace,  birthday,  fatherName,  motherName,  situation , category,  bac,  inscriptionYear,   studyLevel, email)"
+                              "VALUES  (:firstName, :lastName, :cin, :phoneNumber,  :cinDeliveranceDate,  :birthplace, :birthday, :fatherName, :motherName, :situation, :category, :bac, :inscriptionYear, :lvl,        :email)");
     query.bindValue(":firstName", firstName);
     query.bindValue(":lastName",lastName);
     query.bindValue(":cin",cin);
@@ -54,6 +55,7 @@ void NewStudent::on_buttonBox_accepted()
     query.bindValue(":bac", bac);
     query.bindValue(":inscriptionYear", inscriptionYear);
     query.bindValue(":lvl", level);
+    query.bindValue(":email", email);
 
     if(query.exec()){
         QMessageBox::information(this, "Succes", "Vous avez enregistee les donnees avec succes !");

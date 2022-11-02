@@ -453,7 +453,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Gestion d'inscription</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget {
@@ -874,7 +874,7 @@ border: 1px solid black;
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QGridLayout" name="gridLayout_51">
@@ -1377,7 +1377,10 @@ border: 1px solid black;
           <item row="1" column="0" colspan="2">
            <widget class="QTabWidget" name="levelTab">
             <property name="currentIndex">
-             <number>0</number>
+             <number>4</number>
+            </property>
+            <property name="documentMode">
+             <bool>true</bool>
             </property>
             <widget class="QWidget" name="widget">
              <attribute name="title">
@@ -1393,7 +1396,7 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <widget class="QWidget" name="tab_6">
                  <attribute name="title">
@@ -1442,9 +1445,24 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderMinimumSectionSize">
+                       <number>30</number>
+                      </attribute>
+                      <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                       <bool>false</bool>
+                      </attribute>
                      </widget>
                     </item>
                    </layout>
@@ -1497,6 +1515,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -1574,6 +1595,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -1630,6 +1654,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -1658,6 +1685,12 @@ border: 1px solid black;
                 </property>
                 <property name="currentIndex">
                  <number>1</number>
+                </property>
+                <property name="elideMode">
+                 <enum>Qt::ElideNone</enum>
+                </property>
+                <property name="documentMode">
+                 <bool>false</bool>
                 </property>
                 <widget class="QWidget" name="tab_10">
                  <attribute name="title">
@@ -1705,6 +1738,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -1761,6 +1797,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -1841,6 +1880,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -1893,6 +1935,9 @@ border: 1px solid black;
                      <widget class="QTableView" name="m1SrInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -1970,6 +2015,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2029,6 +2077,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2050,8 +2101,14 @@ border: 1px solid black;
          <layout class="QGridLayout" name="gridLayout_50">
           <item row="0" column="0">
            <widget class="QTabWidget" name="levelTab_2">
+            <property name="tabShape">
+             <enum>QTabWidget::Rounded</enum>
+            </property>
             <property name="currentIndex">
              <number>4</number>
+            </property>
+            <property name="documentMode">
+             <bool>true</bool>
             </property>
             <widget class="QWidget" name="widget_3">
              <attribute name="title">
@@ -2119,6 +2176,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2177,6 +2237,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2254,6 +2317,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2309,6 +2375,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2386,6 +2455,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2441,6 +2513,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2511,7 +2586,11 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="m1GbUnpaidTable"/>
+                     <widget class="QTableView" name="m1GbUnpaidTable">
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -2563,6 +2642,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2640,6 +2722,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2696,6 +2781,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2718,8 +2806,20 @@ border: 1px solid black;
          <layout class="QGridLayout" name="gridLayout_34">
           <item row="0" column="0" rowspan="2" colspan="2">
            <widget class="QTabWidget" name="admitedLevelTab">
+            <property name="tabPosition">
+             <enum>QTabWidget::North</enum>
+            </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>0</number>
+            </property>
+            <property name="documentMode">
+             <bool>true</bool>
+            </property>
+            <property name="tabsClosable">
+             <bool>false</bool>
+            </property>
+            <property name="tabBarAutoHide">
+             <bool>false</bool>
             </property>
             <widget class="QWidget" name="widget_2">
              <attribute name="title">
@@ -2736,6 +2836,9 @@ border: 1px solid black;
                 </property>
                 <property name="currentIndex">
                  <number>1</number>
+                </property>
+                <property name="documentMode">
+                 <bool>false</bool>
                 </property>
                 <widget class="QWidget" name="tab_16">
                  <attribute name="title">
@@ -2783,6 +2886,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2839,6 +2945,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -2916,6 +3025,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -2971,6 +3083,9 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -3048,6 +3163,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -3104,137 +3222,8 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
-                      <property name="showGrid">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="tab_24">
-             <attribute name="title">
-              <string>M1</string>
-             </attribute>
-             <layout class="QGridLayout" name="gridLayout_28">
-              <item row="0" column="0">
-               <widget class="QTabWidget" name="fieldTab_9">
-                <property name="tabPosition">
-                 <enum>QTabWidget::North</enum>
-                </property>
-                <property name="tabShape">
-                 <enum>QTabWidget::Rounded</enum>
-                </property>
-                <property name="currentIndex">
-                 <number>1</number>
-                </property>
-                <widget class="QWidget" name="tab_25">
-                 <attribute name="title">
-                  <string>GB</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_29">
-                  <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout_18">
-                    <item>
-                     <widget class="QFrame" name="frame_10">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_17">
-                       <item>
-                        <spacer name="horizontalSpacer_19">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
-                         </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>40</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                        </spacer>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pushButton_25">
-                         <property name="text">
-                          <string>Envoyer mail</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTableView" name="m1GbAdmitedTable">
-                      <property name="editTriggers">
-                       <set>QAbstractItemView::NoEditTriggers</set>
-                      </property>
-                      <property name="alternatingRowColors">
-                       <bool>true</bool>
-                      </property>
-                      <property name="showGrid">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="tab_26">
-                 <attribute name="title">
-                  <string>SR</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_30">
-                  <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout_19">
-                    <item>
-                     <widget class="QFrame" name="frame_18">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_18">
-                       <item>
-                        <spacer name="horizontalSpacer_20">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
-                         </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>40</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                        </spacer>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pushButton_26">
-                         <property name="text">
-                          <string>Envoyer mail</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTableView" name="m1SrAdmitedTable">
-                      <property name="editTriggers">
-                       <set>QAbstractItemView::NoEditTriggers</set>
-                      </property>
-                      <property name="alternatingRowColors">
-                       <bool>true</bool>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -3312,6 +3301,9 @@ border: 1px solid black;
                       <property name="alternatingRowColors">
                        <bool>true</bool>
                       </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
                       <property name="showGrid">
                        <bool>false</bool>
                       </property>
@@ -3367,6 +3359,147 @@ border: 1px solid black;
                       </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
+                      <property name="showGrid">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_24">
+             <attribute name="title">
+              <string>M1</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_28">
+              <item row="0" column="0">
+               <widget class="QTabWidget" name="fieldTab_9">
+                <property name="tabPosition">
+                 <enum>QTabWidget::North</enum>
+                </property>
+                <property name="tabShape">
+                 <enum>QTabWidget::Rounded</enum>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="tab_25">
+                 <attribute name="title">
+                  <string>GB</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_29">
+                  <item row="0" column="0">
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <item>
+                     <widget class="QFrame" name="frame_10">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_17">
+                       <item>
+                        <spacer name="horizontalSpacer_19">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_25">
+                         <property name="text">
+                          <string>Envoyer mail</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTableView" name="m1GbAdmitedTable">
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="alternatingRowColors">
+                       <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
+                      <property name="showGrid">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="tab_26">
+                 <attribute name="title">
+                  <string>SR</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_30">
+                  <item row="0" column="0">
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <item>
+                     <widget class="QFrame" name="frame_18">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <item>
+                        <spacer name="horizontalSpacer_20">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_26">
+                         <property name="text">
+                          <string>Envoyer mail</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTableView" name="m1SrAdmitedTable">
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="alternatingRowColors">
+                       <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
                       </property>
                       <property name="showGrid">
                        <bool>false</bool>
@@ -3424,6 +3557,9 @@ border: 1px solid black;
             </property>
             <property name="alternatingRowColors">
              <bool>true</bool>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
             </property>
             <property name="showGrid">
              <bool>false</bool>

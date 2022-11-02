@@ -25,7 +25,7 @@
         <x>0</x>
         <y>0</y>
         <width>639</width>
-        <height>751</height>
+        <height>800</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -60,6 +60,24 @@
           <widget class="QLineEdit" name="firstname">
            <property name="placeholderText">
             <string>Entrer le(s) prenom(s)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Email*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="email">
+           <property name="placeholderText">
+            <string>john@exemple.com</string>
            </property>
           </widget>
          </item>
