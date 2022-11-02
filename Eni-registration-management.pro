@@ -9,19 +9,26 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dbmanager.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    mainwindow_initTable.cpp \
+    mainwindow_methods.cpp \
+    newstaggering.cpp \
     newstudent.cpp
 
 HEADERS += \
+    dbmanager.h \
     login.h \
     mainwindow.h \
+    newstaggering.h \
     newstudent.h
 
 FORMS += \
     login.ui \
     mainwindow.ui \
+    newstaggering.ui \
     newstudent.ui
 
 # Default rules for deployment.

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSqlDatabase>
+#include <QTableView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,15 +16,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr,QString username = "");
     ~MainWindow();
+    void refreshAllTables();
+    void refreshStaggeringTable();
 
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
-
-    void on_pushButton_4_clicked();
 
     void on_pushButton_3_clicked();
 
@@ -38,6 +39,10 @@ private slots:
     void on_l1ProInvitedTable_clicked(const QModelIndex &index);
 
     void on_inscriptionYear_currentTextChanged(const QString &arg1);
+
+    void on_add_staggering_clicked();
+
+    void on_l1ProInvitedTable_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;
@@ -54,10 +59,22 @@ private:
         *m1GbAdmitedModel, *m1SrAdmitedModel,
         *m2GbAdmitedModel,*m2SrAdmitedModel;
 
+
+    QSqlTableModel *l1ProUnpaidModel,*l1IgUnpaidModel,
+        *l2GbUnpaidModel,*l2SrUnpaidModel,
+        *l3GbUnpaidModel, *l3SrUnpaidModel,
+        *m1GbUnpaidModel, *m1SrUnpaidModel,
+        *m2GbUnpaidModel,*m2SrUnpaidModel;
+
+    QSqlTableModel *staggeringModel;
+
     QSqlDatabase mDatabase;
 
 
     void initInvitedStudentTable(QString year = "2022");
     void initAdmitedStudentTable(QString year = "2022");
+    void initUnpaidStudentTable(QString year="2022");
+    void initStaggeringTable(QString year="2022");
+    void hideColumn(QTableView *tableView);
 };
 #endif // MAINWINDOW_H

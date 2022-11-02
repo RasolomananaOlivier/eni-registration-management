@@ -25,7 +25,7 @@
         <x>0</x>
         <y>0</y>
         <width>639</width>
-        <height>796</height>
+        <height>751</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -34,12 +34,12 @@
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Nom</string>
+            <string>Nom*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit">
+          <widget class="QLineEdit" name="lastname">
            <property name="placeholderText">
             <string>Entrer le nom</string>
            </property>
@@ -52,12 +52,12 @@
          <item>
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Prenom(s)</string>
+            <string>Prenom(s)*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_6">
+          <widget class="QLineEdit" name="firstname">
            <property name="placeholderText">
             <string>Entrer le(s) prenom(s)</string>
            </property>
@@ -70,12 +70,12 @@
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Niveau</string>
+            <string>Niveau*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="level">
            <item>
             <property name="text">
              <string>L1</string>
@@ -110,12 +110,19 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>TextLabel</string>
+            <string>CIN*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_9"/>
+          <widget class="QLineEdit" name="cin">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Entrer le numero cin</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -124,12 +131,12 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Delivrance de la CIN*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QDateEdit" name="deliveranceDate"/>
          </item>
         </layout>
        </item>
@@ -138,12 +145,16 @@
          <item>
           <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Duplicata de la CIN</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_7"/>
+          <widget class="QLineEdit" name="duplicata">
+           <property name="placeholderText">
+            <string>Entrer le numero du duplicata</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -152,12 +163,12 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Delivrance du duplicata</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_4"/>
+          <widget class="QDateEdit" name="duplicataDate"/>
          </item>
         </layout>
        </item>
@@ -166,12 +177,19 @@
          <item>
           <widget class="QLabel" name="label_10">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Annee d'inscription*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_10"/>
+          <widget class="QSpinBox" name="inscriptionYear">
+           <property name="minimum">
+            <number>2022</number>
+           </property>
+           <property name="maximum">
+            <number>2100</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -180,12 +198,12 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Annee de naissance*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_5"/>
+          <widget class="QDateEdit" name="birthday"/>
          </item>
         </layout>
        </item>
@@ -194,12 +212,12 @@
          <item>
           <widget class="QLabel" name="label_11">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Lieu de naissance*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_11"/>
+          <widget class="QLineEdit" name="birthplace"/>
          </item>
         </layout>
        </item>
@@ -208,12 +226,16 @@
          <item>
           <widget class="QLabel" name="label_13">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Telephone*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_13"/>
+          <widget class="QLineEdit" name="phone">
+           <property name="placeholderText">
+            <string>*** ** *** **</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -222,12 +244,12 @@
          <item>
           <widget class="QLabel" name="label_12">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Nom de la mere*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_12"/>
+          <widget class="QLineEdit" name="motherName"/>
          </item>
         </layout>
        </item>
@@ -236,12 +258,12 @@
          <item>
           <widget class="QLabel" name="label_14">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Nom du pere*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_14"/>
+          <widget class="QLineEdit" name="fatherName"/>
          </item>
         </layout>
        </item>
@@ -250,26 +272,33 @@
          <item>
           <widget class="QLabel" name="label_15">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Bac*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_15"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_9">
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
+          <widget class="QComboBox" name="bac">
+           <item>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>D</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>T</string>
+            </property>
+           </item>
           </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_8"/>
          </item>
         </layout>
        </item>
@@ -278,12 +307,33 @@
          <item>
           <widget class="QLabel" name="label_16">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Parcours*</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_16"/>
+          <widget class="QComboBox" name="category">
+           <item>
+            <property name="text">
+             <string>Pro</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ig</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
