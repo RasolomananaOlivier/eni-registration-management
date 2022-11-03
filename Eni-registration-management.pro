@@ -40,6 +40,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    database.qrc \
     images.qrc
 
 QMAKE_CXXFLAGS += -std=gnu++11

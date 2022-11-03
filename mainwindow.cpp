@@ -8,8 +8,11 @@
 #include <newstudent.h>
 #include "newstaggering.h"
 
+//#include <dbmanager.h>
+
 // Change the path to the correct path
 #define ACCESS "DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=C:\\Users\\RASOLOMANANA Olivier\\Documents\\Eni-Registration.mdb"
+#define MAX_PATH 1000
 
 QString style_active = "\
     background-color : rgb(35, 50, 60);\
@@ -23,7 +26,8 @@ QString style_inactive = "\
     color : white;\
     border: none;\
     border-radius: 5px;\
-    text-align: left;";
+    text-align: left;\
+    padding : 10px 20px;";
 
 MainWindow::MainWindow(QWidget *parent,QString username)
     : QMainWindow(parent)
@@ -34,7 +38,9 @@ MainWindow::MainWindow(QWidget *parent,QString username)
     ui->pushButton->setStyleSheet(style_active);
     ui->username_label->setText(username);
 
+
     mDatabase = QSqlDatabase::addDatabase("QODBC");
+
     mDatabase.setDatabaseName(ACCESS);
 
     if(!mDatabase.open()) {
