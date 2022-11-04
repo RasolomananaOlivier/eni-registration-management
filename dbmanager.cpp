@@ -1,4 +1,5 @@
 #include "dbmanager.h"
+#include "mainwindow.h"
 
 #include <QMessageBox>
 #include <QSqlError>

@@ -5,9 +5,30 @@
 #include <QSqlDatabase>
 #include <QTableView>
 
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QValueAxis>
+
+#include <QtCharts/QLineSeries>
+#include <QDateTimeAxis>
+#include <QDateTime>
+
+#include <QSqlQuery>
+#include <QDebug>
+
+#include <map>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+
+QT_CHARTS_USE_NAMESPACE
+
+using namespace std;
 
 class QSqlTableModel;
 
@@ -62,14 +83,21 @@ private slots:
 
     void on_m2SrUnpaidTable_doubleClicked(const QModelIndex &index);
 
+    void on_l1IgInvitedTable_doubleClicked(const QModelIndex &index);
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_newIgTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 
-    QSqlTableModel *l1ProModel,*l1IgModel,
+    QSqlTableModel
+        *newProModel, *newIgModel,
+        *l1ProModel,*l1IgModel,
         *l2GbModel,*l2SrModel,
         *l3GbModel, *l3SrModel,
-        *m1GbModel, *m1SrModel,
-        *m2GbModel,*m2SrModel;
+        *m1GbModel, *m1SrModel;
 
     QSqlTableModel *l1ProAdmitedModel,*l1IgAdmitedModel,
         *l2GbAdmitedModel,*l2SrAdmitedModel,
@@ -93,10 +121,28 @@ private:
     void initAdmitedStudentTable(QString year = "2022");
     void initUnpaidStudentTable(QString year="2022");
     void initStaggeringTable(QString year="2022");
+
     void hideColumn(QTableView *tableView);
     void setupTableModelRelation(QSqlTableModel *model, QTableView *tableView,QString dbTableName,QString studyLevel,QString category, QString year,QString situation );
 
     void openStudentInfo(const QModelIndex &index);
+
+    QLineSeries *amountSeries;
+    QChartView *amountChartView;
+    QDateTimeAxis *amountAxisX= new QDateTimeAxis();
+
+
+    void displayChart();
+    void createBarChart(QWidget *parent,QList<int> data, QString chartTitle,QList<int> yAxisRange);
+
+    void createLineSeries(QWidget *parent,  QList<QPointF> points,QString chartTitle,QString studyLevel);
+    void updateLineSeries( QList<QPointF> points,QString studyLevel);
+    QList<QPointF> getDataOfQLineSeries(QString studyLevel);
+    map<QString, int> queryStudentInscriptionYear(QString studyLevel);
+
+
+    void displayAdmitedChart();
+
 };
 #endif // MAINWINDOW_H
 

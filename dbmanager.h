@@ -4,10 +4,13 @@
 #include <QWidget>
 #include <QSqlDatabase>
 
+#include "mainwindow.h"
+
 class DbManager
 {
 public:
     DbManager(QWidget *parent = nullptr);
+    DbManager(MainWindow *parent = nullptr);
     QSqlDatabase getDb();
 private:
     QSqlDatabase myDatabase =  QSqlDatabase::addDatabase("QODBC","AppConnection");

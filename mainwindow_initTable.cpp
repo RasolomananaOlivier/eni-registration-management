@@ -5,6 +5,13 @@
 #include <QSqlError>
 
 void MainWindow::initInvitedStudentTable(QString year){
+
+    // M2 Gb invited
+      setupTableModelRelation(newProModel, ui->newProTable, "Student", "New","Pro",year,"invited");
+
+    // M2 Sr invited
+      setupTableModelRelation(newIgModel, ui->newIgTable, "Student", "New","Ig",year,"invited");
+
     // L1 Pro invited
     setupTableModelRelation(l1ProModel, ui->l1ProInvitedTable, "Student", "L1","Pro",year,"invited");
 
@@ -28,155 +35,74 @@ void MainWindow::initInvitedStudentTable(QString year){
 
     // M1 Sr invited
       setupTableModelRelation(m1SrModel, ui->m1SrInvitedTable, "Student", "M1","Sr",year,"invited");
-
-    // M2 Gb invited
-      setupTableModelRelation(m2GbModel, ui->m2GbInvitedTable, "Student", "M2","Gb",year,"invited");
-
-    // M2 Sr invited
-      setupTableModelRelation(m2SrModel, ui->m2SrInvitedTable, "Student", "M2","Sr",year,"invited");
 }
 
 
 
 void MainWindow::initAdmitedStudentTable(QString year){
+    // L1 Pro
+    setupTableModelRelation(l1ProAdmitedModel, ui->l1ProAdmitedTable, "Student", "L1","Pro",year,"admited");
 
-    l1ProAdmitedModel->setTable("Student");
-    l1ProAdmitedModel->setFilter(" level = 'L1' AND category = 'Pro' AND situation = 'Admited' ");
-    l1ProAdmitedModel->select();
-    ui->l1ProAdmitedTable->setModel(l1ProAdmitedModel);
+    // L1 Ig
+    setupTableModelRelation(l1IgAdmitedModel, ui->l1IgAdmitedTable, "Student", "L1","Ig",year,"admited");
 
+    // L2 Gb
+    setupTableModelRelation(l2GbAdmitedModel, ui->l2GbAdmitedTable, "Student", "L2","Gb",year,"admited");
 
-    l1IgAdmitedModel->setTable("Student");
-    l1IgAdmitedModel->setFilter(" level = 'L1' AND category = 'Ig' AND situation = 'Admited' ");
-    l1IgAdmitedModel->select();
-    ui->l1IgAdmitedTable->setModel(l1IgAdmitedModel);
+//    // L2 Sr
+    setupTableModelRelation(l2SrAdmitedModel, ui->l2SrAdmitedTable, "Student", "L2","Sr",year,"admited");
 
-    l2GbAdmitedModel->setTable("Student");
-    l2GbAdmitedModel->setFilter(" level = 'L2' AND category = 'Gb' AND situation = 'Admited' ");
-    l2GbAdmitedModel->select();
-    ui->l2GbAdmitedTable->setModel(l2GbAdmitedModel);
+//    // L3 Gb
+     setupTableModelRelation(l3GbAdmitedModel, ui->l3GbAdmitedTable, "Student", "L3","Gb",year,"admited");
 
+//    // L3 SR
+     setupTableModelRelation(l3SrAdmitedModel, ui->l3SrAdmitedTable, "Student", "L3","Sr",year,"admited");
 
-    l2SrAdmitedModel->setTable("Student");
-    l2SrAdmitedModel->setFilter(" level = 'L2' AND category = 'Gb' AND situation = 'Admited' ");
-    l2SrAdmitedModel->select();
-    ui->l2SrAdmitedTable->setModel(l2SrAdmitedModel);
+//    // M1 Gb
+      setupTableModelRelation(m1GbAdmitedModel, ui->m1GbAdmitedTable, "Student", "M1","Gb",year,"admited");
 
+//    // M1 Sr
+      setupTableModelRelation(m1SrAdmitedModel, ui->m1SrAdmitedTable, "Student", "M1","Sr",year,"admited");
 
-    l3GbAdmitedModel->setTable("Student");
-    l3GbAdmitedModel->setFilter(" level = 'L3' AND category = 'Gb' AND situation = 'Admited' ");
-    l3GbAdmitedModel->select();
-    ui->l3GbAdmitedTable->setModel(l3GbAdmitedModel);
+//    // M2 Gb
+      setupTableModelRelation(m2GbAdmitedModel, ui->m2GbAdmitedTable, "Student", "M2","Gb",year,"admited");
 
-
-    l3SrAdmitedModel->setTable("Student");
-    l3SrAdmitedModel->setFilter(" level = 'L3' AND category = 'Sr' AND situation = 'Admited' ");
-    l3SrAdmitedModel->select();
-    ui->l3SrAdmitedTable->setModel(l3SrAdmitedModel);
-
-
-    l3SrAdmitedModel->setTable("Student");
-    l3SrAdmitedModel->setFilter(" level = 'L3' AND category = 'Sr' AND situation = 'Admited' ");
-    l3SrAdmitedModel->select();
-    ui->l3SrAdmitedTable->setModel(l3SrAdmitedModel);
-
-
-    m1GbAdmitedModel->setTable("Student");
-    m1GbAdmitedModel->setFilter(" level = 'M1' AND category = 'Gb' AND situation = 'Admited' ");
-    m1GbAdmitedModel->select();
-    ui->m1GbAdmitedTable->setModel(m1GbAdmitedModel);
-
-
-    m1SrAdmitedModel->setTable("Student");
-    m1SrAdmitedModel->setFilter(" level = 'M1' AND category = 'Sr' AND situation = 'Admited' ");
-    m1SrAdmitedModel->select();
-    ui->m1SrAdmitedTable->setModel(m1SrAdmitedModel);
-
-
-    m2GbAdmitedModel->setTable("Student");
-    m2GbAdmitedModel->setFilter(" level = 'M2' AND category = 'Gb' AND situation = 'Admited' ");
-    m2GbAdmitedModel->select();
-    ui->m2GbAdmitedTable->setModel(m2GbAdmitedModel);
-
-
-    m2SrAdmitedModel->setTable("Student");
-    m2SrAdmitedModel->setFilter(" level = 'M2' AND category = 'Sr' AND situation = 'Admited' ");
-    m2SrAdmitedModel->select();
-    ui->m2SrAdmitedTable->setModel(m2SrAdmitedModel);
+//    // M2 Sr
+      setupTableModelRelation(m2SrAdmitedModel, ui->m2SrAdmitedTable, "Student", "M2","Sr",year,"admited");
 }
 
 
 
 void MainWindow::initUnpaidStudentTable(QString year) {
-    QString yearFilter = " AND inscriptionYear = ";
+    // L1 Pro
+    setupTableModelRelation(l1ProUnpaidModel, ui->l1ProUnpaidTable, "Student", "L1","Pro",year,"unpaid");
 
-    // L1 Pro invited
-    l1ProUnpaidModel = new QSqlTableModel(this);
-    l1ProUnpaidModel->setTable("Student");
-     QString queryl1Pro =" level = 'L1' AND category = 'Pro' AND situation = 'Unpaid' ";
-    l1ProUnpaidModel->setFilter(queryl1Pro + yearFilter + year);
-    l1ProUnpaidModel->select();
-    ui->l1ProUnpaidTable->setModel(l1ProUnpaidModel);
+    // L1 Ig
+    setupTableModelRelation(l1IgUnpaidModel, ui->l1IgUnpaidTable, "Student", "L1","Ig",year,"unpaid");
 
-//    l1IgAdmitedModel = new QSqlTableModel(this);
-//    l1IgAdmitedModel->setTable("Student");
-//    l1IgAdmitedModel->setFilter(" level = 'L1' AND category = 'Ig' AND situation = 'Admited' ");
-//    l1IgAdmitedModel->select();
-//    ui->l1IgAdmitedTable->setModel(l1IgAdmitedModel);
+    // L2 Gb
+    setupTableModelRelation(l2GbUnpaidModel, ui->l2GbUnpaidTable, "Student", "L2","Gb",year,"unpaid");
 
-//    l2GbAdmitedModel = new QSqlTableModel(this);
-//    l2GbAdmitedModel->setTable("Student");
-//    l2GbAdmitedModel->setFilter(" level = 'L2' AND category = 'Gb' AND situation = 'Admited' ");
-//    l2GbAdmitedModel->select();
-//    ui->l2GbAdmitedTable->setModel(l2GbAdmitedModel);
+     // L2 Sr
+    setupTableModelRelation(l2SrUnpaidModel, ui->l2SrUnpaidTable, "Student", "L2","Sr",year,"unpaid");
 
-//    l2SrAdmitedModel = new QSqlTableModel(this);
-//    l2SrAdmitedModel->setTable("Student");
-//    l2SrAdmitedModel->setFilter(" level = 'L2' AND category = 'Gb' AND situation = 'Admited' ");
-//    l2SrAdmitedModel->select();
-//    ui->l2SrAdmitedTable->setModel(l2SrAdmitedModel);
+     // L3 Gb
+     setupTableModelRelation(l3GbUnpaidModel, ui->l3GbUnpaidTable, "Student", "L3","Gb",year,"unpaid");
 
-//    l3GbAdmitedModel = new QSqlTableModel(this);
-//    l3GbAdmitedModel->setTable("Student");
-//    l3GbAdmitedModel->setFilter(" level = 'L3' AND category = 'Gb' AND situation = 'Admited' ");
-//    l3GbAdmitedModel->select();
-//    ui->l3GbAdmitedTable->setModel(l3GbAdmitedModel);
+      // L3 SR
+     setupTableModelRelation(l3SrUnpaidModel, ui->l3SrUnpaidTable, "Student", "L3","Sr",year,"unpaid");
 
-//    l3SrAdmitedModel = new QSqlTableModel(this);
-//    l3SrAdmitedModel->setTable("Student");
-//    l3SrAdmitedModel->setFilter(" level = 'L3' AND category = 'Sr' AND situation = 'Admited' ");
-//    l3SrAdmitedModel->select();
-//    ui->l3SrAdmitedTable->setModel(l3SrAdmitedModel);
+      // M1 Gb
+     setupTableModelRelation(m1GbUnpaidModel, ui->m1GbUnpaidTable, "Student", "M1","Gb",year,"unpaid");
 
-//    l3SrAdmitedModel = new QSqlTableModel(this);
-//    l3SrAdmitedModel->setTable("Student");
-//    l3SrAdmitedModel->setFilter(" level = 'L3' AND category = 'Sr' AND situation = 'Admited' ");
-//    l3SrAdmitedModel->select();
-//    ui->l3SrAdmitedTable->setModel(l3SrAdmitedModel);
+      // M1 Sr
+     setupTableModelRelation(m1SrUnpaidModel, ui->m1SrUnpaidTable, "Student", "M1","Sr",year,"unpaid");
 
-//    m1GbAdmitedModel = new QSqlTableModel(this);
-//    m1GbAdmitedModel->setTable("Student");
-//    m1GbAdmitedModel->setFilter(" level = 'M1' AND category = 'Gb' AND situation = 'Admited' ");
-//    m1GbAdmitedModel->select();
-//    ui->m1GbAdmitedTable->setModel(m1GbAdmitedModel);
+      // M2 Gb
+     setupTableModelRelation(m2GbUnpaidModel, ui->m2GbUnpaidTable, "Student", "M2","Gb",year,"unpaid");
 
-//    m1SrAdmitedModel = new QSqlTableModel(this);
-//    m1SrAdmitedModel->setTable("Student");
-//    m1SrAdmitedModel->setFilter(" level = 'M1' AND category = 'Sr' AND situation = 'Admited' ");
-//    m1SrAdmitedModel->select();
-//    ui->m1SrAdmitedTable->setModel(m1SrAdmitedModel);
-
-//    m2GbAdmitedModel = new QSqlTableModel(this);
-//    m2GbAdmitedModel->setTable("Student");
-//    m2GbAdmitedModel->setFilter(" level = 'M2' AND category = 'Gb' AND situation = 'Admited' ");
-//    m2GbAdmitedModel->select();
-//    ui->m2GbAdmitedTable->setModel(m2GbAdmitedModel);
-
-//    m2SrAdmitedModel = new QSqlTableModel(this);
-//    m2SrAdmitedModel->setTable("Student");
-//    m2SrAdmitedModel->setFilter(" level = 'M2' AND category = 'Sr' AND situation = 'Admited' ");
-//    m2SrAdmitedModel->select();
-//    ui->m2SrAdmitedTable->setModel(m2SrAdmitedModel);
+      // M2 Sr
+     setupTableModelRelation(m2SrUnpaidModel, ui->m2SrUnpaidTable, "Student", "M2","Sr",year,"unpaid");
 }
 
 

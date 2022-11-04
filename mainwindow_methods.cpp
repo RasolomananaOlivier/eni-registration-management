@@ -7,14 +7,14 @@
 
 void MainWindow::refreshAllTables() {
     QSqlTableModel *invitedModels[10] = {
-          l1ProModel,l1IgModel,
+        newProModel,newIgModel,
+        l1ProModel,l1IgModel,
         l2GbModel,l2SrModel,
         l3GbModel,l3SrModel,
         m1GbModel,m1SrModel,
-        m2GbModel,m2SrModel
     };
     QSqlTableModel *admitedModels[10] = {
-          l1ProAdmitedModel,l1IgAdmitedModel,
+        l1ProAdmitedModel,l1IgAdmitedModel,
         l2GbAdmitedModel,l2SrAdmitedModel,
         l3GbAdmitedModel,l3SrAdmitedModel,
         m1GbAdmitedModel,m1SrAdmitedModel,
@@ -78,13 +78,9 @@ void MainWindow::openStudentInfo(const QModelIndex &index){
         data.append(ui->l1ProInvitedTable->model()->data(ui->l1ProInvitedTable->model()->index(row, i),Qt::DisplayRole).toString());
     }
 
-    studentInfo *studentInfoDialog = new studentInfo(nullptr,data);
+    studentInfo *studentInfoDialog = new studentInfo(this,data,this);
     studentInfoDialog->show();
 }
-
-
-
-
 
 
 

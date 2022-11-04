@@ -10,6 +10,12 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
   <property name="palette">
    <palette>
     <active>
@@ -466,362 +472,61 @@
 	padding : 50px;
 }</string>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="3" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout" stretch="5,0,0,0,0,0">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>45</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>7</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>150</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#pushButton {
-	background-color :rgb(26, 32, 41);
-	border: none;
-	color : white;
-	text-align : left;
-	 padding : 10px 20px;
-}
-#pushButton:hover {
-	background-color :rgb(35, 50, 60);
-	text-align : left;
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">#frame {
+	border : none;
 }</string>
-          </property>
-          <property name="text">
-           <string>Acceuil</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/images/icons8-home-48.png</normaloff>:/images/icons8-home-48.png</iconset>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>45</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>7</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>150</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#pushButton_2 {
-	background-color :rgb(26, 32, 41);
-	border: none;
-	color : white;
-	text-align: left;
-	 padding : 10px 20px;
-}
-#pushButton_2:hover {
-	background-color :rgb(35, 50, 60);
-}</string>
-          </property>
-          <property name="text">
-           <string>Invitations</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/images/icons8-invite-48.png</normaloff>:/images/icons8-invite-48.png</iconset>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>45</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>7</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>150</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#pushButton_5 {
-	background-color :rgb(26, 32, 41);
-	border: none;
-	color : white;
-	text-align: left;
-	 padding : 10px 20px;
-}
-#pushButton_5:hover {
-	background-color :rgb(35, 50, 60);
-}</string>
-          </property>
-          <property name="text">
-           <string>Admis</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/images/icons8-university-64.png</normaloff>:/images/icons8-university-64.png</iconset>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_6">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>45</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>7</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>150</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#pushButton_6 {
-	background-color :rgb(26, 32, 41);
-	border: none;
-	color : white;
-
-	text-align : left;
-	 padding : 10px 20px;
-}
-#pushButton_6:hover {
-	background-color :rgb(35, 50, 60);
-}</string>
-          </property>
-          <property name="text">
-           <string>Echelonnement</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/images/icons8-delivery-scheduled-64.png</normaloff>:/images/icons8-delivery-scheduled-64.png</iconset>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="minimumSize">
-           <size>
-            <width>150</width>
-            <height>45</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>7</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>150</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">#pushButton_3 {
-	background-color :rgb(26, 32, 41);
-	border: none;
-	color : white;
-	text-align: left;
-	 padding : 10px 20px;
-}
-#pushButton_3:hover {
-	background-color :rgb(35, 50, 60);
-}</string>
-          </property>
-          <property name="text">
-           <string>Problemes de paiement</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/images/icons8-banknotes-48.png</normaloff>:/images/icons8-banknotes-48.png</iconset>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="4" column="0">
-       <widget class="QFrame" name="frame_2">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#frame_2 {
-	border: none;
-
-}</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QPushButton" name="pushButton_10">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>10</y>
-           <width>152</width>
-           <height>45</height>
-          </rect>
-         </property>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_34">
+       <item>
+        <widget class="QLabel" name="label">
          <property name="minimumSize">
           <size>
-           <width>150</width>
-           <height>45</height>
+           <width>0</width>
+           <height>50</height>
           </size>
          </property>
-         <property name="sizeIncrement">
+         <property name="maximumSize">
           <size>
-           <width>7</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>150</width>
+           <width>16777215</width>
            <height>50</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">#pushButton_10 {
-	background-color :rgb(26, 32, 41);
-	border: none;
+          <string notr="true">#label {
 	color : white;
-	text-align: left;
-	 padding : 10px 20px;
-}
-#pushButton_10:hover {
-	background-color :rgb(35, 50, 60);
+	text-align : center;
+	padding-left :  10px;
+	
 }</string>
          </property>
          <property name="text">
-          <string>Se deconnecter</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/images/icons8-logout-48.png</normaloff>:/images/icons8-logout-48.png</iconset>
-         </property>
-         <property name="default">
-          <bool>true</bool>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;ENI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#label {
-	color : white;
-	text-align : center;
-	padding-left :  23px;
-border: 1px solid black;
-}</string>
-        </property>
-        <property name="text">
-         <string>Logo</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+       </item>
+      </layout>
+     </widget>
     </item>
-    <item row="0" column="1">
+    <item row="0" column="1" rowspan="3">
      <layout class="QVBoxLayout" name="verticalLayout_22">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_22">
+        <property name="leftMargin">
+         <number>18</number>
+        </property>
+        <property name="rightMargin">
+         <number>18</number>
+        </property>
         <item>
          <widget class="QComboBox" name="inscriptionYear">
           <property name="maximumSize">
@@ -918,485 +623,268 @@ border: 1px solid black;
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
-        <widget class="QWidget" name="page">
+        <widget class="QWidget" name="home">
          <layout class="QGridLayout" name="gridLayout_51">
           <item row="0" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_44">
-            <item>
-             <widget class="QGroupBox" name="groupBox">
-              <property name="title">
-               <string>Etudiant invite a s'inscrire</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_33">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_33">
-                 <item>
-                  <widget class="QLabel" name="label_2">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_3">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_35">
-                 <item>
-                  <widget class="QLabel" name="label_7">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_8">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_36">
-                 <item>
-                  <widget class="QLabel" name="label_9">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L3 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_10">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_37">
-                 <item>
-                  <widget class="QLabel" name="label_11">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_12">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_38">
-                 <item>
-                  <widget class="QLabel" name="label_13">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_14">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_55">
-                 <item>
-                  <widget class="QLabel" name="label_47">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Total :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_48">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QGroupBox" name="groupBox_5">
-              <property name="title">
-               <string>Etudiant admis</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_38">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_63">
-                 <item>
-                  <widget class="QLabel" name="label_63">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_64">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_64">
-                 <item>
-                  <widget class="QLabel" name="label_65">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_66">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_65">
-                 <item>
-                  <widget class="QLabel" name="label_67">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L3 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_68">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_66">
-                 <item>
-                  <widget class="QLabel" name="label_69">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_70">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_67">
-                 <item>
-                  <widget class="QLabel" name="label_71">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_72">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_68">
-                 <item>
-                  <widget class="QLabel" name="label_73">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Total :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_74">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QGroupBox" name="groupBox_4">
-              <property name="title">
-               <string>Etudiants n'ayant pas honores leur frais</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_37">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_57">
-                 <item>
-                  <widget class="QLabel" name="label_51">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_52">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_58">
-                 <item>
-                  <widget class="QLabel" name="label_53">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_54">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_59">
-                 <item>
-                  <widget class="QLabel" name="label_55">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L3 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_56">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_60">
-                 <item>
-                  <widget class="QLabel" name="label_57">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_58">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_61">
-                 <item>
-                  <widget class="QLabel" name="label_59">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_60">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_62">
-                 <item>
-                  <widget class="QLabel" name="label_61">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Total :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_62">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="1" column="0">
-           <widget class="QGroupBox" name="groupBox_2">
-            <property name="title">
-             <string>Somme total recu (Ar)</string>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="widgetResizable">
+             <bool>true</bool>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_35">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_45">
-               <item>
-                <widget class="QLabel" name="label_25">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_26">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150.000.000&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_46">
-               <item>
-                <widget class="QLabel" name="label_27">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_28">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_47">
-               <item>
-                <widget class="QLabel" name="label_29">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau L3 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_30">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_48">
-               <item>
-                <widget class="QLabel" name="label_31">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M1 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_32">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_49">
-               <item>
-                <widget class="QLabel" name="label_33">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Niveau M2 :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_34">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_56">
-               <item>
-                <widget class="QLabel" name="label_49">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Total :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_50">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;150&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>-397</y>
+               <width>1128</width>
+               <height>962</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_53">
+              <item row="1" column="1">
+               <layout class="QVBoxLayout" name="verticalLayout_33">
+                <item>
+                 <widget class="QFrame" name="invitedChartView">
+                  <property name="minimumSize">
+                   <size>
+                    <width>400</width>
+                    <height>300</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="admitedChartView">
+                  <property name="minimumSize">
+                   <size>
+                    <width>400</width>
+                    <height>300</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="unpaidChartView">
+                  <property name="minimumSize">
+                   <size>
+                    <width>400</width>
+                    <height>300</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_34">
+                <item>
+                 <widget class="QFrame" name="amountChartView">
+                  <property name="minimumSize">
+                   <size>
+                    <width>700</width>
+                    <height>500</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="admitedChartView_3">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_36">
+                   <property name="rightMargin">
+                    <number>15</number>
+                   </property>
+                   <item>
+                    <widget class="QTableWidget" name="resumeStudentTable">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>125</height>
+                      </size>
+                     </property>
+                     <property name="editTriggers">
+                      <set>QAbstractItemView::NoEditTriggers</set>
+                     </property>
+                     <property name="alternatingRowColors">
+                      <bool>true</bool>
+                     </property>
+                     <property name="showGrid">
+                      <bool>false</bool>
+                     </property>
+                     <attribute name="horizontalHeaderStretchLastSection">
+                      <bool>false</bool>
+                     </attribute>
+                     <row>
+                      <property name="text">
+                       <string>Total invite</string>
+                      </property>
+                     </row>
+                     <row>
+                      <property name="text">
+                       <string>Total admis</string>
+                      </property>
+                     </row>
+                     <row>
+                      <property name="text">
+                       <string>Total avec probleme de paiement</string>
+                      </property>
+                     </row>
+                     <column>
+                      <property name="text">
+                       <string>L1</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>L2</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>L3</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>M1</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>M2</string>
+                      </property>
+                     </column>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QTableWidget" name="resumeAmountTable">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <row>
+                      <property name="text">
+                       <string>Somme total</string>
+                      </property>
+                     </row>
+                     <column>
+                      <property name="text">
+                       <string>Inscription</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Re-inscription</string>
+                      </property>
+                     </column>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_33">
+                <property name="rightMargin">
+                 <number>24</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer_34">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBox">
+                  <item>
+                   <property name="text">
+                    <string>L1</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>L2</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>L3</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>M1</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>M2</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_3">
+        <widget class="QWidget" name="invitedPage">
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
            <spacer name="horizontalSpacer_2">
@@ -1421,14 +909,14 @@ border: 1px solid black;
           <item row="1" column="0" colspan="2">
            <widget class="QTabWidget" name="levelTab">
             <property name="currentIndex">
-             <number>4</number>
+             <number>0</number>
             </property>
             <property name="documentMode">
              <bool>true</bool>
             </property>
             <widget class="QWidget" name="widget">
              <attribute name="title">
-              <string>L1</string>
+              <string>Nouveaux Etudiants</string>
              </attribute>
              <layout class="QGridLayout" name="gridLayout_6">
               <item row="0" column="0">
@@ -1444,7 +932,7 @@ border: 1px solid black;
                 </property>
                 <widget class="QWidget" name="tab_6">
                  <attribute name="title">
-                  <string>PRO</string>
+                  <string>Formation Professionnelle ( PRO )</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_8">
                   <item row="0" column="0">
@@ -1482,7 +970,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l1ProInvitedTable">
+                     <widget class="QTableView" name="newProTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1515,7 +1003,7 @@ border: 1px solid black;
                 </widget>
                 <widget class="QWidget" name="tab_7">
                  <attribute name="title">
-                  <string>IG</string>
+                  <string>Formation Generale ( IG )</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_14">
                   <item row="0" column="0">
@@ -1553,7 +1041,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l1IgInvitedTable">
+                     <widget class="QTableView" name="newIgTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1578,7 +1066,7 @@ border: 1px solid black;
             </widget>
             <widget class="QWidget" name="tab_2">
              <attribute name="title">
-              <string>L2</string>
+              <string>L1</string>
              </attribute>
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="0">
@@ -1590,11 +1078,11 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_8">
                  <attribute name="title">
-                  <string>GB</string>
+                  <string>Génie Logiciel Et Base de Donnée</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_9">
                   <item row="0" column="0">
@@ -1632,7 +1120,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l2GbInvitedTable">
+                     <widget class="QTableView" name="l1ProInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1653,7 +1141,7 @@ border: 1px solid black;
                 </widget>
                 <widget class="QWidget" name="tab_9">
                  <attribute name="title">
-                  <string>SR</string>
+                  <string>Système et Réseaux</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_15">
                   <item row="0" column="0">
@@ -1691,7 +1179,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l2SrInvitedTable">
+                     <widget class="QTableView" name="l1IgInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1716,7 +1204,7 @@ border: 1px solid black;
             </widget>
             <widget class="QWidget" name="tab_3">
              <attribute name="title">
-              <string>L3</string>
+              <string>L2</string>
              </attribute>
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="0">
@@ -1728,7 +1216,7 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>2</number>
                 </property>
                 <property name="elideMode">
                  <enum>Qt::ElideNone</enum>
@@ -1738,7 +1226,7 @@ border: 1px solid black;
                 </property>
                 <widget class="QWidget" name="tab_10">
                  <attribute name="title">
-                  <string>GB</string>
+                  <string>Génie Logiciel Et Base de Donnée</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_10">
                   <item row="0" column="0">
@@ -1776,7 +1264,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l3GbInvitedTable">
+                     <widget class="QTableView" name="l2GbInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1797,7 +1285,7 @@ border: 1px solid black;
                 </widget>
                 <widget class="QWidget" name="tab_11">
                  <attribute name="title">
-                  <string>SR</string>
+                  <string>Système et Réseaux</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_17">
                   <item row="0" column="0">
@@ -1835,7 +1323,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="l3SrInvitedTable">
+                     <widget class="QTableView" name="l2SrInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1854,13 +1342,18 @@ border: 1px solid black;
                   </item>
                  </layout>
                 </widget>
+                <widget class="QWidget" name="tab">
+                 <attribute name="title">
+                  <string>Informatique Général</string>
+                 </attribute>
+                </widget>
                </widget>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="tab_4">
              <attribute name="title">
-              <string>M1</string>
+              <string>L3</string>
              </attribute>
              <layout class="QGridLayout" name="gridLayout_12">
               <item row="0" column="0">
@@ -1872,11 +1365,11 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>2</number>
                 </property>
                 <widget class="QWidget" name="tab_12">
                  <attribute name="title">
-                  <string>GB</string>
+                  <string>Génie Logiciel Et Base de Donnée</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_11">
                   <item row="0" column="0">
@@ -1914,7 +1407,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="m1GbInvitedTable">
+                     <widget class="QTableView" name="l3GbInvitedTable">
                       <property name="autoScroll">
                        <bool>true</bool>
                       </property>
@@ -1938,7 +1431,7 @@ border: 1px solid black;
                 </widget>
                 <widget class="QWidget" name="tab_13">
                  <attribute name="title">
-                  <string>SR</string>
+                  <string>Système et Réseaux</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_16">
                   <item row="0" column="0">
@@ -1976,7 +1469,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="m1SrInvitedTable">
+                     <widget class="QTableView" name="l3SrInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -1992,13 +1485,18 @@ border: 1px solid black;
                   </item>
                  </layout>
                 </widget>
+                <widget class="QWidget" name="tab_44">
+                 <attribute name="title">
+                  <string>Informatique Général</string>
+                 </attribute>
+                </widget>
                </widget>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="tab_5">
              <attribute name="title">
-              <string>M2</string>
+              <string>M1</string>
              </attribute>
              <layout class="QGridLayout" name="gridLayout_5">
               <item row="0" column="0">
@@ -2010,11 +1508,11 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_14">
                  <attribute name="title">
-                  <string>GB</string>
+                  <string>Génie Logiciel Et Base de Donnée</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_13">
                   <item row="0" column="0">
@@ -2052,7 +1550,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="m2GbInvitedTable">
+                     <widget class="QTableView" name="m1GbInvitedTable">
                       <property name="editTriggers">
                        <set>QAbstractItemView::NoEditTriggers</set>
                       </property>
@@ -2073,7 +1571,7 @@ border: 1px solid black;
                 </widget>
                 <widget class="QWidget" name="tab_15">
                  <attribute name="title">
-                  <string>SR</string>
+                  <string>Système et Réseaux</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_18">
                   <item row="0" column="0">
@@ -2111,7 +1609,7 @@ border: 1px solid black;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableView" name="m2SrInvitedTable">
+                     <widget class="QTableView" name="m1SrInvitedTable">
                       <property name="autoScroll">
                        <bool>false</bool>
                       </property>
@@ -2133,6 +1631,11 @@ border: 1px solid black;
                   </item>
                  </layout>
                 </widget>
+                <widget class="QWidget" name="tab_45">
+                 <attribute name="title">
+                  <string>Informatique Général</string>
+                 </attribute>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -2141,9 +1644,9 @@ border: 1px solid black;
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_4">
+        <widget class="QWidget" name="unpaidPage">
          <layout class="QGridLayout" name="gridLayout_50">
-          <item row="0" column="0">
+          <item row="1" column="0">
            <widget class="QTabWidget" name="levelTab_2">
             <property name="tabShape">
              <enum>QTabWidget::Rounded</enum>
@@ -2168,7 +1671,7 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_30">
                  <attribute name="title">
@@ -2843,12 +2346,26 @@ border: 1px solid black;
             </widget>
            </widget>
           </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>unpaid</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
         <widget class="QWidget" name="page_5"/>
         <widget class="QWidget" name="admitedPage">
-         <layout class="QGridLayout" name="gridLayout_34">
-          <item row="0" column="0" rowspan="2" colspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_35">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>admited</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QTabWidget" name="admitedLevelTab">
             <property name="tabPosition">
              <enum>QTabWidget::North</enum>
@@ -2879,7 +2396,7 @@ border: 1px solid black;
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <property name="documentMode">
                  <bool>false</bool>
@@ -3562,7 +3079,7 @@ border: 1px solid black;
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_6">
+        <widget class="QWidget" name="staggeringPage">
          <layout class="QGridLayout" name="gridLayout_52">
           <item row="0" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_50">
@@ -3618,6 +3135,337 @@ border: 1px solid black;
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="5,0,0,0,0,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>7</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+	text-align : left;
+	 padding : 10px 20px;
+	border-radius : 5px;
+}
+#pushButton:hover {
+	background-color : rgb(45, 60, 70) ;
+	text-align : left;
+	border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Acceuil</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/images/icons8-home-48.png</normaloff>:/images/icons8-home-48.png</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>7</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_2 {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+	text-align: left;
+	padding : 10px 20px;
+	border-radius : 5px;
+}
+#pushButton_2:hover {
+	background-color :rgb(45, 60, 70);
+	border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Invitations</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/images/icons8-invite-48.png</normaloff>:/images/icons8-invite-48.png</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>7</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_5 {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+	text-align: left;
+	 padding : 10px 20px;
+	border-radius : 5px;
+}
+#pushButton_5:hover {
+	background-color :rgb(45, 60, 70);
+	border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Admis</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/images/icons8-university-64.png</normaloff>:/images/icons8-university-64.png</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>7</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_6 {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+
+	text-align : left;
+	 padding : 10px 20px;
+	border-radius : 5px;
+}
+#pushButton_6:hover {
+	background-color :rgb(45, 60, 70);
+	border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Echelonnement</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/images/icons8-delivery-scheduled-64.png</normaloff>:/images/icons8-delivery-scheduled-64.png</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>7</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_3 {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+	text-align: left;
+	 padding : 10px 20px;
+	border-radius : 5px;
+}
+#pushButton_3:hover {
+	background-color :rgb(45, 60, 70);
+	border-radius : 5px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Problemes de paiement</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/images/icons8-banknotes-48.png</normaloff>:/images/icons8-banknotes-48.png</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QFrame" name="frame_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#frame_2 {
+	border: none;
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>152</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>7</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>150</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton_10 {
+	background-color :rgb(26, 32, 41);
+	border: none;
+	color : white;
+	text-align: left;
+	 padding : 10px 20px;
+}
+#pushButton_10:hover {
+	background-color :rgb(45, 60, 70);
+	border-radius: 5px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Se deconnecter</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/images/icons8-logout-48.png</normaloff>:/images/icons8-logout-48.png</iconset>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>

@@ -6,13 +6,14 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <newstudent.h>
-#include "newstaggering.h"
 
-//#include <dbmanager.h>
+#include <QDateTime>
+#include <QtCharts>
+
+#include "newstaggering.h"
 
 // Change the path to the correct path
 #define ACCESS "DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=C:\\Users\\RASOLOMANANA Olivier\\Documents\\Eni-Registration.mdb"
-#define MAX_PATH 1000
 
 QString style_active = "\
     background-color : rgb(35, 50, 60);\
@@ -49,16 +50,16 @@ MainWindow::MainWindow(QWidget *parent,QString username)
     }
 
     // Invited model
+    newProModel = new QSqlTableModel(this),
+    newIgModel = new QSqlTableModel(this),
     l1ProModel = new QSqlTableModel(this),
-            l1IgModel = new QSqlTableModel(this),
-            l2GbModel = new QSqlTableModel(this),
-            l2SrModel = new QSqlTableModel(this),
-            l3GbModel = new QSqlTableModel(this),
-            l3SrModel = new QSqlTableModel(this),
-            m1GbModel = new QSqlTableModel(this),
-            m1SrModel = new QSqlTableModel(this),
-            m2GbModel = new QSqlTableModel(this),
-            m2SrModel = new QSqlTableModel(this);
+    l1IgModel = new QSqlTableModel(this),
+    l2GbModel = new QSqlTableModel(this),
+    l2SrModel = new QSqlTableModel(this),
+    l3GbModel = new QSqlTableModel(this),
+    l3SrModel = new QSqlTableModel(this),
+    m1GbModel = new QSqlTableModel(this),
+    m1SrModel = new QSqlTableModel(this);
 
 
     // Admited model
@@ -74,12 +75,31 @@ MainWindow::MainWindow(QWidget *parent,QString username)
             m2GbAdmitedModel = new QSqlTableModel(this),
             m2SrAdmitedModel = new QSqlTableModel(this);
 
+    l1ProUnpaidModel = new QSqlTableModel(this),
+            l1IgUnpaidModel = new QSqlTableModel(this),
+            l2GbUnpaidModel = new QSqlTableModel(this),
+            l2SrUnpaidModel = new QSqlTableModel(this),
+            l3GbUnpaidModel = new QSqlTableModel(this),
+            l3SrUnpaidModel = new QSqlTableModel(this),
+            l3SrUnpaidModel = new QSqlTableModel(this),
+            m1GbUnpaidModel = new QSqlTableModel(this),
+            m1SrUnpaidModel = new QSqlTableModel(this),
+            m2GbUnpaidModel = new QSqlTableModel(this),
+            m2SrUnpaidModel = new QSqlTableModel(this);
+
     staggeringModel = new QSqlTableModel(this);
 
     initInvitedStudentTable();
     initAdmitedStudentTable();
     initUnpaidStudentTable();
     initStaggeringTable();
+
+    // ***
+    amountSeries = new QLineSeries();
+    displayChart();
+
+    ui->resumeStudentTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->resumeAmountTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 MainWindow::~MainWindow()
@@ -243,6 +263,45 @@ void MainWindow::on_m2GbUnpaidTable_doubleClicked(const QModelIndex &index)
 
 
 void MainWindow::on_m2SrUnpaidTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_l1IgInvitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index);
+}
+
+
+void MainWindow::on_comboBox_currentTextChanged(const QString &level)
+{
+    qDebug() << "update called";
+
+    QDateTime xFValue,xValue,xValue2,xValue3,xValue4,xValue5,xValue6;
+    xFValue.setDate(QDate(2021,1,1));
+    xValue.setDate(QDate(2022,1,1));
+    xValue2.setDate(QDate(2023,1,1));
+    xValue3.setDate(QDate(2024,1,1));
+    xValue4.setDate(QDate(2025,1,1));
+    xValue5.setDate(QDate(2026,1,1));
+    xValue6.setDate(QDate(2027,1,1));
+    QList<QPointF> points = {
+        QPointF(xFValue.toMSecsSinceEpoch(),0),
+        QPointF(xValue.toMSecsSinceEpoch(),180000),
+        QPointF(xValue2.toMSecsSinceEpoch(),120000),
+        QPointF(xValue3.toMSecsSinceEpoch(),170000),
+        QPointF(xValue4.toMSecsSinceEpoch(),190000),
+        QPointF(xValue5.toMSecsSinceEpoch(),160000),
+        QPointF(xValue6.toMSecsSinceEpoch(),150000)
+    };
+
+//    createLineSeries(ui->amountChartView,points,"Somme total d'inscription par an",level, true);
+    updateLineSeries(points, level);
+}
+
+
+void MainWindow::on_newIgTable_doubleClicked(const QModelIndex &index)
 {
     openStudentInfo(index);
 }

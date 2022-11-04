@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,11 +13,13 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    mainwindow_charts.cpp \
     mainwindow_initTable.cpp \
     mainwindow_methods.cpp \
     newstaggering.cpp \
     newstudent.cpp \
-    studentinfo.cpp
+    studentinfo.cpp \
+    updatestudent.cpp
 
 HEADERS += \
     dbmanager.h \
@@ -25,14 +27,16 @@ HEADERS += \
     mainwindow.h \
     newstaggering.h \
     newstudent.h \
-    studentinfo.h
+    studentinfo.h \
+    updatestudent.h
 
 FORMS += \
     login.ui \
     mainwindow.ui \
     newstaggering.ui \
     newstudent.ui \
-    studentinfo.ui
+    studentinfo.ui \
+    updatestudent.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

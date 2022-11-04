@@ -53,6 +53,9 @@ void Login::on_login_clicked()
 
             MainWindow *dashboard ;
             dashboard = new MainWindow(nullptr, userName);
+
+            db.close();
+
             // Make the window fullscreen
             dashboard->setWindowState(Qt::WindowMaximized);
             dashboard->show();
