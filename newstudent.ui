@@ -6,16 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>673</width>
+    <width>579</width>
     <height>680</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-color : rgb(26, 32, 41);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_18">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
     <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea { 
+	background-color : transparent;
+	border: none;
+}</string>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -23,23 +46,66 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>639</width>
-        <height>800</height>
+        <y>-737</y>
+        <width>565</width>
+        <height>1350</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget { 
+	background-color : transparent;
+}</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
+        <widget class="QLabel" name="label_17">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	margin : 30px 0px 0px 0px;
+}</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#ffffff;&quot;&gt;Ajouter un nouveau étudiant&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	margin : 0px 0px 30px 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Veuillez à bien remplir les champs avec *&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Nom*</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Nom*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLineEdit" name="lastname">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
            <property name="placeholderText">
             <string>Entrer le nom</string>
            </property>
@@ -49,8 +115,20 @@
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
            <property name="text">
             <string>Prenom(s)*</string>
            </property>
@@ -58,6 +136,14 @@
          </item>
          <item>
           <widget class="QLineEdit" name="firstname">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
            <property name="placeholderText">
             <string>Entrer le(s) prenom(s)</string>
            </property>
@@ -67,8 +153,20 @@
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_9">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_8">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
            <property name="text">
             <string>Email*</string>
            </property>
@@ -76,6 +174,14 @@
          </item>
          <item>
           <widget class="QLineEdit" name="email">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
            <property name="placeholderText">
             <string>john@exemple.com</string>
            </property>
@@ -84,9 +190,53 @@
         </layout>
        </item>
        <item>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Telephone*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="phone">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <property name="placeholderText">
+            <string>*** ** *** **</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
            <property name="text">
             <string>Niveau*</string>
            </property>
@@ -94,6 +244,19 @@
          </item>
          <item>
           <widget class="QComboBox" name="level">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Nouveau</string>
+            </property>
+           </item>
            <item>
             <property name="text">
              <string>L1</string>
@@ -124,206 +287,18 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>CIN*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="cin">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>Entrer le numero cin</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Delivrance de la CIN*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="deliveranceDate"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Duplicata de la CIN</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="duplicata">
-           <property name="placeholderText">
-            <string>Entrer le numero du duplicata</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Delivrance du duplicata</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="duplicataDate"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_11">
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>Annee d'inscription*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="inscriptionYear">
-           <property name="minimum">
-            <number>2022</number>
-           </property>
-           <property name="maximum">
-            <number>2100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Annee de naissance*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="birthday"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_12">
-         <item>
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Lieu de naissance*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="birthplace"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_14">
-         <item>
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>Telephone*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="phone">
-           <property name="placeholderText">
-            <string>*** ** *** **</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_13">
-         <item>
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Nom de la mere*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="motherName"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_15">
-         <item>
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>Nom du pere*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="fatherName"/>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_16">
-         <item>
-          <widget class="QLabel" name="label_15">
-           <property name="text">
-            <string>Bac*</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="bac">
-           <item>
-            <property name="text">
-             <string>C</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>D</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>S</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>T</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
         <layout class="QVBoxLayout" name="verticalLayout_17">
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_16">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
            <property name="text">
             <string>Parcours*</string>
            </property>
@@ -331,6 +306,14 @@
          </item>
          <item>
           <widget class="QComboBox" name="category">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
            <item>
             <property name="text">
              <string>Pro</string>
@@ -355,55 +338,442 @@
          </item>
         </layout>
        </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>CIN*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="cin">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Entrer le numero cin</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Delivrance de la CIN*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="deliveranceDate">
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Duplicata de la CIN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="duplicata">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <property name="placeholderText">
+            <string>Entrer le numero du duplicata</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Delivrance du duplicata</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="duplicataDate">
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Annee d'inscription*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="inscriptionYear">
+           <property name="styleSheet">
+            <string notr="true">QSpinBox{
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <property name="minimum">
+            <number>2022</number>
+           </property>
+           <property name="maximum">
+            <number>2100</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Annee de naissance*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="birthday">
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Lieu de naissance*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="birthplace">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_13">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Nom de la mere*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="motherName">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
+         <property name="topMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Nom du pere*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="fatherName">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_16">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>13</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color : white;
+	font-size : 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Bac*</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="bac">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	border-radius : 5px;
+	padding : 10px;
+	background-color : white;
+}
+</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>D</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>T</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>0</number>
      </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     <property name="rightMargin">
+      <number>23</number>
      </property>
-    </widget>
+     <property name="bottomMargin">
+      <number>20</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color :transparent;
+	border: 2px solid rgb(123, 136, 200);
+	color : white;
+	border-radius : 5px;
+	padding : 10px 15px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/images/icons8-close-48.png</normaloff>:/images/icons8-close-48.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color :rgb(123, 136, 200);
+	border: none;
+	color : white;
+	border-radius : 5px;
+	padding : 10px 15px;
+}
+QPushButton:active {
+	background-color :rgb(140, 150, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Enregistrer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/images/icons8-save-94.png</normaloff>:/images/icons8-save-94.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
- <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>NewStudent</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>NewStudent</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
 </ui>

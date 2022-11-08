@@ -29,7 +29,6 @@ UpdateStudent::UpdateStudent(QWidget *parent,QList<QString> data,MainWindow *das
     ui->inscriptionYear->setValue(data[14].toInt());
     ui->level->setCurrentText(data[15]);
     ui->email->setText(data[17]);
-    qDebug() << data[17];
 
 }
 
@@ -42,13 +41,9 @@ void UpdateStudent::on_saveBtn_clicked()
 {
         QSqlQuery query;
         query.prepare("UPDATE Student "
-                      "SET firstName=:firstName,  lastName=:lastName, "
-                      "cin=:cin,  phoneNumber=:phoneNumber,  "
-                      "cinDeliveranceDate=:cinDeliveranceDate,    birthplace=:birthplace,  "
-                      "birthday=:birthday,  fatherName=:fatherName,  "
-                      "motherName=:motherName,  situation=:situation , "
-                      "category=:category,  bac=:bac,  "
-                      "inscriptionYear=:inscriptionYear, "
+                      "SET firstName=:firstName,  lastName=:lastName, cin=:cin,  phoneNumber=:phoneNumber,  "
+                      "cinDeliveranceDate=:cinDeliveranceDate,    birthplace=:birthplace,  birthday=:birthday,  fatherName=:fatherName,  "
+                      "motherName=:motherName,  situation=:situation , category=:category,  bac=:bac,  inscriptionYear=:inscriptionYear, "
                       "studyLevel=:studyLevel, email=:email "
                       "WHERE studentId=:studentId");
 

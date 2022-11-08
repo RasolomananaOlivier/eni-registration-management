@@ -2,43 +2,63 @@
 #include "ui_mainwindow.h"
 
 
-void MainWindow::displayChart() {
+void MainWindow::renderAllBarChart(QString year)
+{
 
     // l1, l2 , l3, M1, M2
-    QList<int> l1InvitedTotal = {800, 200, 150, 100, 80 };
-    QList<int> l1AdmitedTotal = {150, 140, 120 , 100 , 70};
-    QList<int> l1UnpaidTotal = {10, 14, 2 , 20 , 0};
+    map<QString, QList<int>> barChartData = getSituationCountBasedOnYear("2022");
+    QList<int> invitedData = barChartData["invited"];
+    QList<int> invitedDataRange = {
+        0,
+        Utility::max(invitedData.toVector()) + 5
+    };
 
-    QList<int> range = {0,1000};
+    QList<int> admitedData = barChartData["admited"];
+    QList<int> admitedDataRange = {
+        0,
+        Utility::max(admitedData.toVector()) + 5
+    };
+
+    QList<int> unpaidData = barChartData["unpaid"];
+    QList<int> unpaidDataRange = {
+        0,
+        Utility::max(unpaidData.toVector()) + 5
+    };
 
     // Bar chart for the total invited students
-    createBarChart(ui->invitedChartView, l1InvitedTotal,
-                   "Total des etudents invites a s'inscrire",range);
+    createBarChart(invitedChartView,invitedData , newToM1ListLabel,
+            "Total des étudiants invités à s'inscrire",invitedDataRange );
 
     // Bar chart for the total admited students
-    createBarChart(ui->admitedChartView, l1AdmitedTotal,
-                   "Total des etudents admis", range);
+    createBarChart(admitedChartView, admitedData,l1ToM2ListLabel,
+                   "Total des étudiants admis",  admitedDataRange);
 
     // Bar chart for the total students that have a problem of payment
-    createBarChart(ui->unpaidChartView, l1UnpaidTotal,
-                   "Total des etudents qui ont un probleme de paiement", {0, 50});
-
-    // Line chart for the amount
-    createLineSeries(ui->amountChartView, getDataOfQLineSeries("L1") ,"Somme total d'inscription par an","L1");
+    createBarChart(unpaidChartView, unpaidData, newToM1ListLabel,
+                   "Total des étudiants qui ont un problème de paiement",unpaidDataRange);
 }
 
 
-void MainWindow::createBarChart(QWidget *parent,QList<int> data, QString chartTitle,QList<int> yAxisRange) {
 
-    QBarSet *set0 = new QBarSet("L1");
-    QBarSet *set1 = new QBarSet("L2");
-    QBarSet *set2 = new QBarSet("L3");
-    QBarSet *set3 = new QBarSet("M1");
-    QBarSet *set4 = new QBarSet("M2");
+void MainWindow::displayChart()
+{
+    renderAllBarChart("2022");
 
-    QBarSet *sets[5] = { set0, set1, set2, set3, set4 };
+    createLineSeries(ui->amountChartView, getDataOfQLineSeries("L1"),
+                     "Somme totale d'inscription au cours des années","L1");
+}
 
+
+
+void MainWindow::createBarChart(
+        QChartView *chartView,QList<int> data,QStringList labels,
+        QString chartTitle,QList<int> yAxisRange)
+{
+    QBarSet *sets[5];
     for (int i = 0 ; i < data.size() ; i++ ) {
+        // Create a new set
+        sets[i]= new QBarSet(labels[i]);
+        // Add data to it
         sets[i]->append(data[i]);
     }
 
@@ -53,31 +73,21 @@ void MainWindow::createBarChart(QWidget *parent,QList<int> data, QString chartTi
     chart->setTitle(chartTitle);
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setRange(yAxisRange[0],yAxisRange[1]);
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
 
-    //    QStringList categories;
-    //    categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
-    //    QBarCategoryAxis *axisX = new QBarCategoryAxis();
-    //    axisX->append(categories);
-    //    chart->addAxis(axisX, Qt::AlignBottom);
-    //    series->attachAxis(axisX);
-
-        QValueAxis *axisY = new QValueAxis();
-        axisY->setRange(yAxisRange[0],yAxisRange[1]);
-        chart->addAxis(axisY, Qt::AlignLeft);
-        series->attachAxis(axisY);
-        chart->legend()->setVisible(true);
-        chart->legend()->setAlignment(Qt::AlignBottom);
-    ////![5]
-
-    //![6]
-        QChartView *chartView = new QChartView(chart,parent);
-        chartView->setRenderHint(QPainter::Antialiasing);
-        chartView->setFixedSize(400, 300);
+    chartView->setChart(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setFixedSize(400, 300);
 }
 
 
-void MainWindow::createLineSeries(QWidget *parent, QList<QPointF> points, QString chartTitle,QString studyLevel) {
-
+void MainWindow::createLineSeries(QWidget *parent, QList<QPointF> points, QString chartTitle,QString studyLevel)
+{
     for (int i = 0; i < points.size() ; i++ ) {
         this->amountSeries->append(points[i]);
     }
@@ -117,7 +127,7 @@ void MainWindow::updateLineSeries( QList<QPointF> points,QString studyLevel){
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->setTitle("Somme total d'inscription par an ( " + studyLevel + " )");
+    chart->setTitle("Somme totale d'inscription au cours des années ( " + studyLevel + " )");
 
     // Reset the chart of the chart view
     amountChartView->setChart(chart);
@@ -139,6 +149,7 @@ void MainWindow::updateLineSeries( QList<QPointF> points,QString studyLevel){
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
 }
+
 
 map<QString, int> MainWindow::queryStudentInscriptionYear(QString studyLevel){
     map<QString, int> yearCount;
@@ -167,11 +178,14 @@ map<QString, int> MainWindow::queryStudentInscriptionYear(QString studyLevel){
     return yearCount;
 }
 
+
+
 QList<QPointF> MainWindow::getDataOfQLineSeries(QString studyLevel) {
+    // ("2022", 235),("2023", 250),...
     map<QString, int> yearCountMap = queryStudentInscriptionYear(studyLevel);
 
     QList<QDateTime> dateTimeList;
-
+    // => { QDateTime(2022,1,1) , QDateTime(2023,1,1) ,...}
     for (auto it : yearCountMap ) {
         QDateTime tmpDate;
         tmpDate.setDate(QDate(it.first.toInt(),1,1));
@@ -183,7 +197,16 @@ QList<QPointF> MainWindow::getDataOfQLineSeries(QString studyLevel) {
         QDateTime d;
         d.setDate(QDate(it.first.toInt(),1,1));
 
-        long amount = it.second * 50000;
+        long amount;
+        if(studyLevel.compare("L1") == 0){
+            // it.second : 235 * 450.000ar
+            amount = it.second * 450000;
+        }else if(studyLevel.compare("L2") == 0 || studyLevel.compare("L3")){
+            amount = it.second * 472500;
+        }else{
+            amount = it.second * 682500;
+        }
+
 
         points.append(QPointF(d.toMSecsSinceEpoch(), amount));
     }

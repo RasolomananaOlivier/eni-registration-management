@@ -11,6 +11,8 @@
 #include <QtCharts>
 
 #include "newstaggering.h"
+#include "ctime"
+
 
 // Change the path to the correct path
 #define ACCESS "DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=C:\\Users\\RASOLOMANANA Olivier\\Documents\\Eni-Registration.mdb"
@@ -39,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent,QString username)
     ui->pushButton->setStyleSheet(style_active);
     ui->username_label->setText(username);
 
+    ui->pageName->setText("Acceuil");
 
     mDatabase = QSqlDatabase::addDatabase("QODBC");
 
@@ -75,20 +78,26 @@ MainWindow::MainWindow(QWidget *parent,QString username)
             m2GbAdmitedModel = new QSqlTableModel(this),
             m2SrAdmitedModel = new QSqlTableModel(this);
 
-    l1ProUnpaidModel = new QSqlTableModel(this),
+    // Unpaid model
+    newProUnpaidModel =  new QSqlTableModel(this),
+            newIgUnpaidModel =  new QSqlTableModel(this),
+            l1ProUnpaidModel = new QSqlTableModel(this),
             l1IgUnpaidModel = new QSqlTableModel(this),
             l2GbUnpaidModel = new QSqlTableModel(this),
             l2SrUnpaidModel = new QSqlTableModel(this),
             l3GbUnpaidModel = new QSqlTableModel(this),
             l3SrUnpaidModel = new QSqlTableModel(this),
-            l3SrUnpaidModel = new QSqlTableModel(this),
             m1GbUnpaidModel = new QSqlTableModel(this),
-            m1SrUnpaidModel = new QSqlTableModel(this),
-            m2GbUnpaidModel = new QSqlTableModel(this),
-            m2SrUnpaidModel = new QSqlTableModel(this);
+            m1SrUnpaidModel = new QSqlTableModel(this);
 
-    staggeringModel = new QSqlTableModel(this);
+    staggeringModel = new QSqlQueryModel(this);
 
+    // Initialize QChartViews
+    invitedChartView = new QChartView(ui->invitedChartView);
+    admitedChartView = new QChartView(ui->admitedChartView);
+    unpaidChartView = new QChartView(ui->unpaidChartView);
+
+    // Init all table
     initInvitedStudentTable();
     initAdmitedStudentTable();
     initUnpaidStudentTable();
@@ -100,6 +109,10 @@ MainWindow::MainWindow(QWidget *parent,QString username)
 
     ui->resumeStudentTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->resumeAmountTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    isInscriptionDateEnd();
+    setResumeStudentTable("2022");
+    setResumeAmountTable("2022");
 }
 
 MainWindow::~MainWindow()
@@ -111,6 +124,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+     ui->pageName->setText("Acceuil");
 
     ui->pushButton->setStyleSheet(style_active);
     ui->pushButton_2->setStyleSheet(style_inactive);
@@ -123,6 +137,8 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+     ui->pageName->setText("Invités");
+
     ui->pushButton_2->setStyleSheet(style_active);
     ui->pushButton->setStyleSheet(style_inactive);
     ui->pushButton_3->setStyleSheet(style_inactive);
@@ -135,17 +151,21 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    ui->pageName->setText("Frais Non Payés");
+
     ui->pushButton->setStyleSheet(style_inactive);
     ui->pushButton_2->setStyleSheet(style_inactive);
     ui->pushButton_3->setStyleSheet(style_active);
     ui->pushButton_5->setStyleSheet(style_inactive);
-     ui->pushButton_6->setStyleSheet(style_inactive);
+    ui->pushButton_6->setStyleSheet(style_inactive);
 }
 
 
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+    ui->pageName->setText("Admis");
+
     ui->pushButton_5->setStyleSheet(style_active);
     ui->pushButton->setStyleSheet(style_inactive);
     ui->pushButton_2->setStyleSheet(style_inactive);
@@ -157,6 +177,8 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+    ui->pageName->setText("Demande d'échelonnement");
+
     ui->pushButton_6->setStyleSheet(style_active);
     ui->pushButton->setStyleSheet(style_inactive);
     ui->pushButton_2->setStyleSheet(style_inactive);
@@ -197,7 +219,14 @@ void MainWindow::on_l1ProInvitedTable_clicked(const QModelIndex &index)
 void MainWindow::on_inscriptionYear_currentTextChanged(const QString &selectedYear)
 {
     initInvitedStudentTable(selectedYear);
+    initAdmitedStudentTable(selectedYear);
+    initUnpaidStudentTable(selectedYear);
+
+    renderAllBarChart(selectedYear);
+    setResumeStudentTable(selectedYear);
+    setResumeAmountTable(selectedYear);
 }
+
 
 
 void MainWindow::on_add_staggering_clicked()
@@ -211,98 +240,142 @@ void MainWindow::on_add_staggering_clicked()
 
 void MainWindow::on_l1ProInvitedTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l1ProInvitedTable);
 }
 
 void MainWindow::on_l1IgUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l1IgUnpaidTable);
 }
 
 
 void MainWindow::on_l2GbUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l2GbUnpaidTable);
 }
 
 
 void MainWindow::on_l2SrUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l2SrUnpaidTable);
 }
 
 
 void MainWindow::on_l3GbUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l3GbUnpaidTable);
 }
 
 
 void MainWindow::on_l3SrUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index,ui->l2SrUnpaidTable);
 }
 
 
 void MainWindow::on_m1GbUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->m1GbUnpaidTable);
 }
 
 
 void MainWindow::on_m1SrUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->m1SrUnpaidTable);
 }
 
 
 void MainWindow::on_m2GbUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index,ui->m2GbAdmitedTable);
 }
 
 
 void MainWindow::on_m2SrUnpaidTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index,ui->m2SrAdmitedTable);
 }
 
 
 void MainWindow::on_l1IgInvitedTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index, ui->l1IgInvitedTable);
 }
 
 
 void MainWindow::on_comboBox_currentTextChanged(const QString &level)
 {
-    qDebug() << "update called";
-
-    QDateTime xFValue,xValue,xValue2,xValue3,xValue4,xValue5,xValue6;
-    xFValue.setDate(QDate(2021,1,1));
-    xValue.setDate(QDate(2022,1,1));
-    xValue2.setDate(QDate(2023,1,1));
-    xValue3.setDate(QDate(2024,1,1));
-    xValue4.setDate(QDate(2025,1,1));
-    xValue5.setDate(QDate(2026,1,1));
-    xValue6.setDate(QDate(2027,1,1));
-    QList<QPointF> points = {
-        QPointF(xFValue.toMSecsSinceEpoch(),0),
-        QPointF(xValue.toMSecsSinceEpoch(),180000),
-        QPointF(xValue2.toMSecsSinceEpoch(),120000),
-        QPointF(xValue3.toMSecsSinceEpoch(),170000),
-        QPointF(xValue4.toMSecsSinceEpoch(),190000),
-        QPointF(xValue5.toMSecsSinceEpoch(),160000),
-        QPointF(xValue6.toMSecsSinceEpoch(),150000)
-    };
-
-//    createLineSeries(ui->amountChartView,points,"Somme total d'inscription par an",level, true);
-    updateLineSeries(points, level);
+    updateLineSeries(getDataOfQLineSeries(level), level);
 }
 
 
 void MainWindow::on_newIgTable_doubleClicked(const QModelIndex &index)
 {
-    openStudentInfo(index);
+    openStudentInfo(index,ui->newIgTable);
+}
+
+
+void MainWindow::on_staggeringTable_doubleClicked(const QModelIndex &index)
+{
+    openChangeStaggering(index);
+}
+
+// Admited
+void MainWindow::on_l1ProAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l1ProAdmitedTable);
+}
+
+
+void MainWindow::on_l1IgAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l1IgAdmitedTable);
+}
+
+
+void MainWindow::on_l2GbAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l2GbAdmitedTable);
+}
+
+void MainWindow::on_l2SrAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l2SrAdmitedTable);
+}
+
+
+void MainWindow::on_l3GbAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l3GbAdmitedTable);
+}
+
+
+void MainWindow::on_l3SrAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->l3SrAdmitedTable);
+}
+
+
+void MainWindow::on_m1GbAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->m1GbAdmitedTable);
+}
+
+void MainWindow::on_m1SrAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->m1SrAdmitedTable);
+}
+
+
+void MainWindow::on_m2GbAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->m2GbAdmitedTable);
+}
+
+
+
+void MainWindow::on_m2SrAdmitedTable_doubleClicked(const QModelIndex &index)
+{
+    openStudentInfo(index,ui->m2SrAdmitedTable);
 }
 

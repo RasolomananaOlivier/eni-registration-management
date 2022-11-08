@@ -17,9 +17,9 @@ public:
     ~NewStudent();
 
 private slots:
-    void on_buttonBox_accepted();
+    void on_cancelBtn_clicked();
 
-    void on_buttonBox_rejected();
+    void on_saveBtn_clicked();
 
 private:
     Ui::NewStudent *ui;

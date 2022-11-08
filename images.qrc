@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/images">
-        <file>nodejs.png</file>
         <file>icons8-banknotes-48.png</file>
         <file>icons8-delivery-scheduled-64.png</file>
         <file>icons8-home-office-64.png</file>
@@ -12,5 +11,12 @@
         <file>icons8-home-48.png</file>
         <file>icons8-logout-48.png</file>
         <file>icons8-male-user-48.png</file>
+        <file>icons8-add-new-48.png</file>
+        <file>icons8-close-48.png</file>
+        <file>icons8-level-up-48.png</file>
+        <file>icons8-login-rounded-48.png</file>
+        <file>icons8-save-94.png</file>
+        <file>arrow-down.png</file>
+        <file>add.png</file>
     </qresource>
 </RCC>

@@ -25,6 +25,7 @@ Login::~Login()
 
 void Login::on_login_clicked()
 {
+
     DbManager dbManager = DbManager(this);
     QSqlDatabase db = dbManager.getDb();
 

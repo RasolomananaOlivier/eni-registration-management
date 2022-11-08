@@ -19,56 +19,49 @@ NewStudent::~NewStudent()
     delete ui;
 }
 
-void NewStudent::on_buttonBox_accepted()
+void NewStudent::on_cancelBtn_clicked()
 {
-    QString firstName = ui->firstname->text();
-    QString lastName = ui->lastname->text();
-    QString level = ui->level->currentText();
-    QString cin = ui->cin->text();
-    QString cinDeliveranceDate = ui->deliveranceDate->text();
-    QString birthday = ui->birthday->text();
-    QString birthplace = ui->birthplace->text();
-    QString phoneNumber = ui->phone->text();
-    QString motherName= ui->motherName->text();
-    QString fatherName = ui->fatherName->text();
-    QString bac = ui->bac->currentText();
-    QString category = ui->category->currentText();
-    QString inscriptionYear = ui->inscriptionYear->text();
-    QString email = ui->email->text();
+    this->close();
+}
 
+
+void NewStudent::on_saveBtn_clicked()
+{
+    QString level = ui->level->currentText();
+    if(level.compare("Nouveau") == 0){
+        level = "New";
+    }
 
     QSqlQuery query;
 
-    query.prepare("INSERT INTO Student (firstName,  lastName,  cin,  phoneNumber,  cinDeliveranceDate,    birthplace,  birthday,  fatherName,  motherName,  situation , category,  bac,  inscriptionYear,   studyLevel, email)"
-                              "VALUES  (:firstName, :lastName, :cin, :phoneNumber,  :cinDeliveranceDate,  :birthplace, :birthday, :fatherName, :motherName, :situation, :category, :bac, :inscriptionYear, :lvl,        :email)");
-    query.bindValue(":firstName", firstName);
-    query.bindValue(":lastName",lastName);
-    query.bindValue(":cin",cin);
+    query.prepare("INSERT INTO "
+                  "Student (firstName,  lastName,  cin,  phoneNumber,  cinDeliveranceDate,    "
+                  "birthplace,  birthday,  fatherName,  motherName,  situation , category,  bac,  "
+                  "inscriptionYear,   studyLevel, email)"
+                  "VALUES  (:firstName, :lastName, :cin, :phoneNumber,  :cinDeliveranceDate,  "
+                  ":birthplace, :birthday, :fatherName, :motherName, :situation, :category, "
+                  ":bac, :inscriptionYear, :lvl,        :email)");
+    query.bindValue(":firstName", ui->firstname->text());
+    query.bindValue(":lastName",ui->lastname->text());
+    query.bindValue(":cin",ui->cin->text());
     query.bindValue(":situation","invited");
-    query.bindValue(":phoneNumber",phoneNumber);
-    query.bindValue(":cinDeliveranceDate",cinDeliveranceDate);
-    query.bindValue(":category", category);
-    query.bindValue(":birthplace", birthplace);
-    query.bindValue(":birthday", birthday);
-    query.bindValue(":motherName",motherName);
-    query.bindValue(":fatherName", fatherName);
-    query.bindValue(":bac", bac);
-    query.bindValue(":inscriptionYear", inscriptionYear);
-    query.bindValue(":lvl", level);
-    query.bindValue(":email", email);
+    query.bindValue(":phoneNumber",ui->phone->text());
+    query.bindValue(":cinDeliveranceDate", ui->deliveranceDate->text());
+    query.bindValue(":category", ui->category->currentText());
+    query.bindValue(":birthplace",  ui->birthplace->text());
+    query.bindValue(":birthday", ui->birthday->text());
+    query.bindValue(":motherName", ui->motherName->text());
+    query.bindValue(":fatherName", ui->fatherName->text());
+    query.bindValue(":bac",  ui->bac->currentText());
+    query.bindValue(":inscriptionYear",  ui->inscriptionYear->text());
+    query.bindValue(":lvl",level );
+    query.bindValue(":email",  ui->email->text());
 
     if(query.exec()){
         QMessageBox::information(this, "Succes", "Vous avez enregistee les donnees avec succes !");
         this->dashboard->refreshAllTables();
      }else{
-        qDebug() << query.lastError().text();
         QMessageBox::critical(this, "Echec", "L'enregistrement a echoue !");
     }
-}
-
-
-void NewStudent::on_buttonBox_rejected()
-{
-    qDebug() << "Rejected";
 }
 

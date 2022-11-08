@@ -20,7 +20,7 @@ NewStaggering::NewStaggering(QWidget *parent,MainWindow *dashboard) :
 
     QSqlQuery query(QSqlDatabase::database("AppConnection"));
 
-    query.prepare("SELECT * FROM Student WHERE studyLevel = 'L1' AND category = 'Pro'");
+    query.prepare("SELECT * FROM Student WHERE studyLevel = 'L1' AND category = 'Pro' AND situation='invited'");
 
     if(query.exec()){
         while (query.next()) {
@@ -48,7 +48,7 @@ void NewStaggering::on_levelChoice_currentTextChanged(const QString &level)
     QSqlQuery query(QSqlDatabase::database("AppConnection"));
 
 
-    query.prepare("SELECT * FROM Student WHERE studyLevel = :studyLevel AND category = :category");
+    query.prepare("SELECT * FROM Student WHERE studyLevel = :studyLevel AND category = :category AND situation='invited'");
     query.bindValue(":studyLevel", level);
     query.bindValue(":category", category);
 
@@ -99,8 +99,6 @@ void NewStaggering::on_saveStaggeringbtn_accepted()
     QString lastname = list.at(0).toLocal8Bit().constData();
     QString firstname = list.at(1).toLocal8Bit().constData();
 
-    qDebug() << lastname << firstname ;
-
     QSqlQuery query;
 
     query.prepare("SELECT * FROM Student WHERE lastName = :last AND firstName = :first");
@@ -115,7 +113,6 @@ void NewStaggering::on_saveStaggeringbtn_accepted()
             isMatch = true;
         }
 
-        qDebug() << index;
         query.prepare("INSERT INTO Staggering (studentId, totalAmount, totalPaid, dueDate)"
                                     "VALUES    (:sId,      :tAmount,    0, :dDate)");
         query.bindValue(":sId", index);
@@ -124,33 +121,13 @@ void NewStaggering::on_saveStaggeringbtn_accepted()
 
         if(query.exec()){
             this->dashboard->refreshStaggeringTable();
-            QMessageBox::information(this,"Succes", "Donnee enregistrer");
+            QMessageBox::information(this,"Succes", "Donnée enregistrée");
         }else{
             qDebug() << query.lastError().text();
-            QMessageBox::critical(this, "Error", "Inserting failed");
+            QMessageBox::critical(this, "Error", "Ajout échoué");
         }
     }else{
         qDebug() << query.lastError().text();
         QMessageBox::critical(this, "Error", "Query failed");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

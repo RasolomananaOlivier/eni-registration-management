@@ -7,10 +7,10 @@
 void MainWindow::initInvitedStudentTable(QString year){
 
     // M2 Gb invited
-      setupTableModelRelation(newProModel, ui->newProTable, "Student", "New","Pro",year,"invited");
+    setupTableModelRelation(newProModel, ui->newProTable, "Student", "New","Pro",year,"invited");
 
     // M2 Sr invited
-      setupTableModelRelation(newIgModel, ui->newIgTable, "Student", "New","Ig",year,"invited");
+    setupTableModelRelation(newIgModel, ui->newIgTable, "Student", "New","Ig",year,"invited");
 
     // L1 Pro invited
     setupTableModelRelation(l1ProModel, ui->l1ProInvitedTable, "Student", "L1","Pro",year,"invited");
@@ -49,31 +49,38 @@ void MainWindow::initAdmitedStudentTable(QString year){
     // L2 Gb
     setupTableModelRelation(l2GbAdmitedModel, ui->l2GbAdmitedTable, "Student", "L2","Gb",year,"admited");
 
-//    // L2 Sr
+    // L2 Sr
     setupTableModelRelation(l2SrAdmitedModel, ui->l2SrAdmitedTable, "Student", "L2","Sr",year,"admited");
 
-//    // L3 Gb
+    // L3 Gb
      setupTableModelRelation(l3GbAdmitedModel, ui->l3GbAdmitedTable, "Student", "L3","Gb",year,"admited");
 
-//    // L3 SR
+    // L3 SR
      setupTableModelRelation(l3SrAdmitedModel, ui->l3SrAdmitedTable, "Student", "L3","Sr",year,"admited");
 
-//    // M1 Gb
+    // M1 Gb
       setupTableModelRelation(m1GbAdmitedModel, ui->m1GbAdmitedTable, "Student", "M1","Gb",year,"admited");
 
-//    // M1 Sr
+    // M1 Sr
       setupTableModelRelation(m1SrAdmitedModel, ui->m1SrAdmitedTable, "Student", "M1","Sr",year,"admited");
 
-//    // M2 Gb
+    // M2 Gb
       setupTableModelRelation(m2GbAdmitedModel, ui->m2GbAdmitedTable, "Student", "M2","Gb",year,"admited");
 
-//    // M2 Sr
+    // M2 Sr
       setupTableModelRelation(m2SrAdmitedModel, ui->m2SrAdmitedTable, "Student", "M2","Sr",year,"admited");
 }
 
 
 
 void MainWindow::initUnpaidStudentTable(QString year) {
+    // L1 Pro
+    setupTableModelRelation(newProUnpaidModel, ui->l1ProUnpaidTable, "Student", "New","Pro",year,"unpaid");
+
+    // L1 Ig
+    setupTableModelRelation(newIgUnpaidModel, ui->l1IgUnpaidTable, "Student", "New","Ig",year,"unpaid");
+
+
     // L1 Pro
     setupTableModelRelation(l1ProUnpaidModel, ui->l1ProUnpaidTable, "Student", "L1","Pro",year,"unpaid");
 
@@ -97,20 +104,53 @@ void MainWindow::initUnpaidStudentTable(QString year) {
 
       // M1 Sr
      setupTableModelRelation(m1SrUnpaidModel, ui->m1SrUnpaidTable, "Student", "M1","Sr",year,"unpaid");
-
-      // M2 Gb
-     setupTableModelRelation(m2GbUnpaidModel, ui->m2GbUnpaidTable, "Student", "M2","Gb",year,"unpaid");
-
-      // M2 Sr
-     setupTableModelRelation(m2SrUnpaidModel, ui->m2SrUnpaidTable, "Student", "M2","Sr",year,"unpaid");
 }
 
 
 void MainWindow::initStaggeringTable(QString year){
 
-    staggeringModel->setTable("Staggering");
+    staggeringModel->setQuery("SELECT * FROM Student "
+                              "INNER JOIN Staggering ON Staggering.studentId = Student.studentId "
+                              "WHERE Staggering.isAdmited=false");
 
-    staggeringModel->select();
+    staggeringModel->setHeaderData(1,Qt::Horizontal,tr("Prénoms"));
+    staggeringModel->setHeaderData(2,Qt::Horizontal,tr("Nom"));
+    staggeringModel->setHeaderData(9,Qt::Horizontal,tr("Téléphone"));
+    staggeringModel->setHeaderData(15,Qt::Horizontal,tr("Année d'inscription"));
+    staggeringModel->setHeaderData(16,Qt::Horizontal,tr("Niveau"));
+    staggeringModel->setHeaderData(17,Qt::Horizontal,tr("Email"));
+    staggeringModel->setHeaderData(20,Qt::Horizontal,tr("Somme totale"));
+    staggeringModel->setHeaderData(21,Qt::Horizontal,tr("Somme payée"));
+    staggeringModel->setHeaderData(22,Qt::Horizontal,tr("Date fin de paiement"));
 
     ui->staggeringTable->setModel(staggeringModel);
+
+    ui->staggeringTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    QList<int> blackListColumn = {0,3,4,5,6,7,8,10,11,12,13,14,18,19,23};
+
+    for (int i = 0 ; i < blackListColumn.size() ; i++ ) {
+        ui->staggeringTable->setColumnHidden(blackListColumn[i],true);
+    }
+}
+
+
+void MainWindow::admitStaggeringPaid(){
+//    QSqlQuery query;
+
+
+//    query.prepare("UPDATE Student "
+//                  "SET situation='");
+
+//    if(query.exec()){
+//        while (query.next()) {
+//            QString firstname =  query.value(1).toString();
+//            QString lastname = query.value(2).toString();
+
+
+//        }
+//    }else{
+//        qDebug() << query.lastError().text();
+//        QMessageBox::critical(this, "Error", "Query failed");
+//    }
 }
