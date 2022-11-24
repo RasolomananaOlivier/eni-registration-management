@@ -73,6 +73,7 @@ void UpdateStudent::on_saveBtn_clicked()
         if(query.exec()){
              QMessageBox::information(this,"Query Succed","Update Successful");
              this->dashboard->refreshAllTables();
+             this->close();
         }else{
             QMessageBox::critical(this,"Query failed", query.lastError().text());
         }

@@ -54,8 +54,19 @@ StudentDetails::StudentDetails(QWidget *parent,QList<QString> data, MainWindow *
             nextStudyLevel = "M2";
         }
     }else if(studentSituation.compare("admited") == 0){
+        if(currentStudyLevel.compare("New") == 0){
+            nextStudyLevel = "L1";
+        }else if(currentStudyLevel.compare("L1") == 0){
+            nextStudyLevel = "L2";
+        }else if(currentStudyLevel.compare("L2") == 0){
+            nextStudyLevel = "L3";
+        }else if(currentStudyLevel.compare("L3") == 0){
+            nextStudyLevel = "M1";
+        }else {
+            nextStudyLevel = "M2";
+        }
         ui->admitedBtn->hide();
-        ui->invitationBtn->setText("Inviter à s'inscrire en "+ data[16]);
+        ui->invitationBtn->setText("Inviter à s'inscrire en "+ nextStudyLevel);
     }else {
         currentStudyLevel = data[16];
         ui->invitationBtn->hide();
@@ -66,15 +77,6 @@ StudentDetails::~StudentDetails()
 {
     delete ui;
 }
-
-
-//void StudentDetails::on_updateBtn_clicked()
-//{
-//    this->close();
-//    UpdateStudent *updateWindow = new UpdateStudent(parent,data,dashboard);
-//    updateWindow->show();
-//}
-
 
 
 void StudentDetails::on_admitedBtn_clicked()
@@ -97,5 +99,13 @@ void StudentDetails::on_admitedBtn_clicked()
 void StudentDetails::on_pushButton_clicked()
 {
     this->close();
+}
+
+
+void StudentDetails::on_updateBtn_clicked()
+{
+    this->close();
+    UpdateStudent *updateWindow = new UpdateStudent(parent,data,dashboard);
+    updateWindow->show();
 }
 

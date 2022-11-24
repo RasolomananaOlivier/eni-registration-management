@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_updateBtn_clicked();
+
 private:
     Ui::StudentDetails *ui;
 
